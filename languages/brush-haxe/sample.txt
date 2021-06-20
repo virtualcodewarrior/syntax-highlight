@@ -1,0 +1,12 @@
+class Test {
+    static function main() {
+        var people = [
+            "Elizabeth" => "Programmer",
+            "Joel" => "Designer"
+        ];
+        for (name in people.keys()) {
+            var job = people[name];
+            trace('$name is a $job');
+        }
+    }
+}
