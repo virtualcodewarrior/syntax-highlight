@@ -1,4 +1,4 @@
-var XRegExp = require('syntaxhighlighter-regex').XRegExp;
+import { XRegExp } from '../syntaxhighlighter-regex/index.js';
 
 var BOOLEANS = {'true': true, 'false': false};
 
@@ -16,7 +16,7 @@ function process(value)
   return result == null ? value : result;
 }
 
-module.exports = {
+export default {
   defaults: function(target, source)
   {
     for(var key in source || {})

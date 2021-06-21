@@ -1,13 +1,14 @@
-# SyntaxHighlighter v4
+this is forked from [https://github.com/syntaxhighlighter](https://github.com/syntaxhighlighter)
+No development has happened on the above project for several years and version located at that repo is currently not building.
+I liked this syntax highlighter, but I don't like builds in my web projects, so this will remove any required build steps, convert it in a mono repo which makes
+it easier to fork this. That will also reduce the dependencies because I don't need webpack, babel etc.
+This does mean that it will only support 'modern' browsers.
 
-[![GratiPay](https://img.shields.io/gratipay/user/alexgorbatchev.svg)](https://gratipay.com/alexgorbatchev/)
-[![Build Status](https://travis-ci.org/syntaxhighlighter/theme-swift.svg)](https://travis-ci.org/syntaxhighlighter/syntaxhighlighter)
-![Downloads](https://img.shields.io/npm/dm/syntaxhighlighter.svg)
-![Version](https://img.shields.io/npm/v/syntaxhighlighter.svg)
+# SyntaxHighlighter no-build edition
 
 SyntaxHighlighter is THE client side highlighter for the web and web-apps! It's been around since 2004 and it's used virtually everywhere to seamlessly highlight code for presentation purposes.
 
-<img src="screenshot.png" width="640"/>
+<img alt="screenshot" src="screenshot.png" style="width: 640px;"/>
 
 The history of this project predates majority of the common web technologies and it has been a challenge to dedicate time and effort to keep it up to date. Everything used to be in one file and assign `window` variables... Horrors!
 
@@ -27,21 +28,6 @@ SyntaxHighlighter is currently used and has been used in the past by Microsoft, 
 * The `?` was completely removed for cleaner, more seamless experience.
 * You still have to HTML escape `<` when using `<pre/>` tags.
 
-## Older Version
-
-If you are looking for v3 documentation and download, you can find it on the [old site](alexgorbatchev.com/SyntaxHighlighter).
-
-# Support
-
-As it always goes with open source, you are welcome to use SyntaxHighlighter free of charge. If you are using and enjoying my work, maybe you could buy me a beer (or if you don’t drink – a coffee and bagel will do just fine, a good kind of bagel though, you know… with wonderful stuff inside to make it glorious, like smoked salmon and creamcheese… not just butter).
-
-**Please [click here to donate via PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2930402) and just like they say on TV – give generously! It motivates me to keep working on this (12 years now and counting).**
-
 # License
-
+The original authors have copyright to their original code. 
 MIT
-
-[Filing Issues]: https://github.com/syntaxhighlighter/syntaxhighlighter/wiki/Filing-Issues
-[Building]: https://github.com/syntaxhighlighter/syntaxhighlighter/wiki/Building
-[Usage]: https://github.com/syntaxhighlighter/syntaxhighlighter/wiki/Usage
-[Caveats]: https://github.com/syntaxhighlighter/syntaxhighlighter/wiki/Caveats

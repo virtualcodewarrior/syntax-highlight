@@ -1,5 +1,5 @@
-var BrushBase = require('brush-base');
-var regexLib = require('syntaxhighlighter-regex').commonRegExp;
+import BrushBase from '../brush-base/brush-base.js';
+import { commonRegExp as regexLib } from '../../utilities/syntaxhighlighter-regex/index.js';
 
 function Brush() {
   // Contributed by Jen
@@ -94,4 +94,4 @@ function Brush() {
 
 Brush.prototype = new BrushBase();
 Brush.aliases = ['coldfusion', 'cf'];
-module.exports = Brush;
+export default Brush;

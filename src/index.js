@@ -1,12 +1,17 @@
-import domready from 'domready';
-import SyntaxHighlighter from './core';
-import * as dasherize from './dasherize';
+import SyntaxHighlighter, { registerBrush } from './core.js';
+import javascript from '../languages/brush-javascript/brush.js';
+import * as dasherize from './dasherize.js';
 
-// configured through the `--compat` parameter.
-if (COMPAT) {
-  require('./compatibility_layer_v3');
+function ready(fn) {
+	if (document.readyState !== 'loading') {
+		fn();
+	} else {
+		document.addEventListener('DOMContentLoaded', fn);
+	}
 }
 
-domready(() => SyntaxHighlighter.highlight(dasherize.object(window.syntaxhighlighterConfig || {})));
+registerBrush(javascript);
 
-export * from './core';
+ready(() => SyntaxHighlighter.highlight(dasherize.object(window.syntaxhighlighterConfig || {})));
+
+export * from './core.js';

@@ -1874,4 +1874,4 @@
  * Expose XRegExp
  * ============================== */
 
-    module.exports = XRegExp;
+export default XRegExp;

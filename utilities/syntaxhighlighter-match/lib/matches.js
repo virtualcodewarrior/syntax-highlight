@@ -1,5 +1,5 @@
-import { Match } from './match';
-import { XRegExp } from 'syntaxhighlighter-regex';
+import { Match } from './match.js';
+import { XRegExp } from '../../syntaxhighlighter-regex/index.js';
 
 /**
  * Executes given regular expression on provided code and returns all matches that are found.

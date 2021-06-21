@@ -243,7 +243,7 @@ function quickCodeHandler(e)
   });
 };
 
-module.exports = {
+export default {
   quickCodeHandler: quickCodeHandler,
   create: create,
   popup: popup,

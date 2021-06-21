@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   space: '&nbsp;',
 
   /** Enables use of <SCRIPT type="syntaxhighlighter" /> tags. */

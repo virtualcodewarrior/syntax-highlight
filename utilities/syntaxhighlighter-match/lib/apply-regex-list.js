@@ -1,4 +1,4 @@
-import { find, sort, removeNested, compact } from './matches';
+import { find, sort, removeNested, compact } from './matches.js';
 
 /**
  * Applies all regular expression to the code and stores all found

@@ -84,7 +84,7 @@ function toBoolean(value)
   return result == null ? value : result;
 }
 
-module.exports = {
+export default {
   splitLines: splitLines,
   eachLine: eachLine,
   guid: guid,

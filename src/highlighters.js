@@ -1,6 +1,6 @@
 var highlighters = {};
 
-module.exports = {
+export default {
   id: function(id)
   {
     var prefix = 'highlighter_';
