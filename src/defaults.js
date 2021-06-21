@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   /** Additional CSS class names to be added to highlighter elements. */
   'class-name': '',
 

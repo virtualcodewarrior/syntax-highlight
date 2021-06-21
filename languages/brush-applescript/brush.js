@@ -1,5 +1,4 @@
-var BrushBase = require('brush-base');
-var regexLib = require('syntaxhighlighter-regex').commonRegExp;
+import BrushBase from '../brush-base/brush-base.js';
 
 function Brush() {
   // AppleScript brush by David Chambers
@@ -114,8 +113,8 @@ function Brush() {
       css: 'keyword'
     }
   ];
-};
+}
 
 Brush.prototype = new BrushBase();
 Brush.aliases = ['applescript'];
-module.exports = Brush;
+export default Brush;

@@ -1,5 +1,5 @@
-var BrushBase = require('brush-base');
-var regexLib = require('syntaxhighlighter-regex').commonRegExp;
+import BrushBase from '../brush-base/brush-base.js';
+import { commonRegExp as regexLib } from '../../utilities/syntaxhighlighter-regex/index.js';
 
 function Brush() {
   // Copyright 2006 Shin, YoungJin
@@ -94,4 +94,4 @@ function Brush() {
 
 Brush.prototype = new BrushBase();
 Brush.aliases = ['cpp', 'cc', 'c++', 'c', 'h', 'hpp', 'h++'];
-module.exports = Brush;
+export default Brush;

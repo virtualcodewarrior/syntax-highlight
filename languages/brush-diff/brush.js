@@ -1,5 +1,4 @@
-var BrushBase = require('brush-base');
-var regexLib = require('syntaxhighlighter-regex').commonRegExp;
+import BrushBase from '../brush-base/brush-base.js';
 
 function Brush() {
   this.regexList = [
@@ -32,4 +31,4 @@ function Brush() {
 
 Brush.prototype = new BrushBase();
 Brush.aliases = ['diff', 'patch'];
-module.exports = Brush;
+export default Brush;

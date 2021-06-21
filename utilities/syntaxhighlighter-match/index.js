@@ -1,2 +1,2 @@
-export * from './lib/match';
-export * from './lib/apply-regex-list';
+export * from './lib/match.js';
+export * from './lib/apply-regex-list.js';

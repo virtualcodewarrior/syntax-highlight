@@ -1,4 +1,4 @@
-module.exports = function(code, opts) {
+export default function(code, opts) {
   var br = /<br\s*\/?>|&lt;br\s*\/?&gt;/gi;
 
   if (opts['bloggerMode'] === true)

@@ -1,4 +1,4 @@
-import XRegExp from './xregexp';
+import XRegExp from './xregexp.js';
 
 export { XRegExp };
 
