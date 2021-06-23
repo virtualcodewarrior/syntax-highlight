@@ -1,38 +1,34 @@
-var chai = require('chai');
-var expect = chai.expect;
-var match = require('syntaxhighlighter-match');
+import { applyRegexList } from '../../utilities/syntaxhighlighter-match/syntaxhighlighter-match.js';
+import Brush from './brush.js';
 
+describe('brush-erlang', () => {
+	let instance = null;
+	let sample;
 
-var Brush = require('./brush');
+	beforeAll(async() => {
+		instance = new Brush();
+		sample = await (await fetch('/base/languages/brush-erlang/sample.txt')).text();
+	});
 
-var sample = require('fs').readFileSync(`${__dirname}/sample.txt`, 'utf8');
+	it('has populated code sample', () => {
+		expect(sample).not.toMatch(/^Populate/);
+	});
 
-describe('brush-erlang', function() {
-  var instance = null;
+	describe('instance', () => {
+		it('has `regexList`', () => {
+			expect(instance.regexList).toBeDefined();
+		});
+	});
 
-  before(function() {
-    instance = new Brush();
-  });
+	describe('parsing', () => {
+		let matches = null;
 
-  it('has populated code sample', function() {
-    expect(sample).to.not.match(/^Populate/);
-  });
+		beforeAll(() => {
+			matches = applyRegexList(sample, instance.regexList);
+		});
 
-  describe('instance', function() {
-    it('has `regexList`', function() {
-      expect(instance).to.have.property('regexList');
-    });
-  });
-
-  describe('parsing', function() {
-    var matches = null;
-
-    before(function() {
-      matches = match.applyRegexList(sample, instance.regexList);
-    });
-
-    it('can parse', function() {
-      expect(matches).to.have.length.above(0);
-    });
-  });
+		it('can parse', () => {
+			expect(matches.length).toBeGreaterThan(0);
+		});
+	});
 });

@@ -1,54 +1,48 @@
 import BrushBase from '../brush-base/brush-base.js';
-import { commonRegExp as regexLib } from '../../utilities/syntaxhighlighter-regex/index.js';
-import { XRegExp } from '../../utilities/syntaxhighlighter-regex/index.js';
-import { Match } from '../../utilities/syntaxhighlighter-match/index.js';
+import { commonRegExp as regexLib, xRegExp } from '../../utilities/syntaxhighlighter-regex/syntaxhighlighter-regex.js';
+import { Match } from '../../utilities/syntaxhighlighter-match/lib/match.js';
 
 function Brush() {
-	function process(match, regexInfo) {
-		var code = match[0],
-			tag = XRegExp.exec(code, XRegExp('(&lt;|<)[\\s\\/\\?!]*(?<name>[:\\w-\\.]+)', 'xg')),
-			result = [];
+	function process(match) {
+		const code = match[0];
+		const tag = xRegExp.exec(code, xRegExp('(&lt;|<)[\\s\\/\\?!]*(?<name>[:\\w-\\.]+)', 'xg'));
+		const result = [];
 
-		if (match.attributes != null) {
-			var attributes,
-				pos = 0,
-				regex = XRegExp('(?<name> [\\w:.-]+)' +
-					'\\s*=\\s*' +
-					'(?<value> ".*?"|\'.*?\'|\\w+)',
-					'xg');
+		if (match.attributes !== null) {
+			let attributes;
+			let pos = 0;
+			const regex = xRegExp('(?<name> [\\w:.-]+)' +
+				'\\s*=\\s*' +
+				'(?<value> ".*?"|\'.*?\'|\\w+)',
+			'xg');
 
-			while ((attributes = XRegExp.exec(code, regex, pos)) != null) {
+			while ((attributes = xRegExp.exec(code, regex, pos)) !== null) {
 				result.push(new Match(attributes.name, match.index + attributes.index, 'color1'));
 				result.push(new Match(attributes.value, match.index + attributes.index + attributes[0].indexOf(attributes.value), 'string'));
 				pos = attributes.index + attributes[0].length;
 			}
 		}
 
-		if (tag != null) {
+		if (tag !== null) {
 			result.push(
-				new Match(tag.name, match.index + tag[0].indexOf(tag.name), 'keyword')
+				new Match(tag.name, match.index + tag[0].indexOf(tag.name), 'keyword'),
 			);
 		}
 
 		return result;
 	}
 
-	this.regexList = [
-		{
-			regex: XRegExp('(\\&lt;|<)\\!\\[[\\w\\s]*?\\[(.|\\s)*?\\]\\](\\&gt;|>)', 'gm'),
-			css: 'color2'
-		},
-		{
-			regex: regexLib.xmlComments,
-			css: 'comments'
-		},
-		{
-			regex: XRegExp('(&lt;|<)[\\s\\/\\?!]*(\\w+)(?<attributes>.*?)[\\s\\/\\?]*(&gt;|>)', 'sg'),
-			func: process
-		}
-	];
+	this.regexList = [{
+		regex: xRegExp('(\\&lt;|<)\\!\\[[\\w\\s]*?\\[(.|\\s)*?\\]\\](\\&gt;|>)', 'gm'),
+		css: 'color2',
+	}, {
+		regex: regexLib.xmlComments,
+		css: 'comments',
+	}, {
+		regex: xRegExp('(&lt;|<)[\\s\\/\\?!]*(\\w+)(?<attributes>.*?)[\\s\\/\\?]*(&gt;|>)', 'sg'),
+		func: process,
+	}];
 }
 
 Brush.prototype = new BrushBase();
-Brush.aliases = ['xml', 'xhtml', 'xslt', 'html', 'plist'];
 export default Brush;

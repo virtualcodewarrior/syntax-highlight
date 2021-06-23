@@ -1,13 +1,12 @@
-import { expect } from 'chai';
-import { commonRegExp, XRegExp } from '.';
+import { commonRegExp, xRegExp } from './syntaxhighlighter-regex.js';
 
-describe('syntaxhighlighter-regex', function() {
-  describe('commonRegExp', () => {
-    it('is ok', () => expect(commonRegExp).to.be.ok);
-    it('has multiLineCComments', () => expect(commonRegExp).to.have.property('multiLineCComments'));
-  });
+describe('syntaxhighlighter-regex', () => {
+	describe('commonRegExp', () => {
+		it('is ok', () => expect(commonRegExp).toBeTruthy());
+		it('has multiLineCComments', () => expect(commonRegExp.multiLineCComments).not.toBeUndefined());
+	});
 
-  describe('XRegExp', () => {
-    it('is ok', () => expect(XRegExp).to.be.ok);
-  });
+	describe('XRegExp', () => {
+		it('xRegExp - is ok', () => expect(xRegExp).toBeTruthy());
+	});
 });

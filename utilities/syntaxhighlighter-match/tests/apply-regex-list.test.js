@@ -1,37 +1,36 @@
-import { expect } from 'chai';
-import { applyRegexList } from '..';
+import { applyRegexList } from '../syntaxhighlighter-match.js';
 
 const REGEX_LIST = [
-  { regex: /hello|world/g, css: 'greeting' },
-  { regex: /\w+/g, css: 'word' }
+	{ regex: /hello|world/g, css: 'greeting' },
+	{ regex: /\w+/g, css: 'word' },
 ];
 
-describe('apply-regex-list', function() {
-  let matches = null;
+describe('apply-regex-list', () => {
+	let matches = null;
 
-  describe('applyRegexList', function() {
-    before(function() {
-      matches = applyRegexList('hello all world', REGEX_LIST);
-    });
+	describe('applyRegexList', () => {
+		beforeAll(() => {
+			matches = applyRegexList('hello all world', REGEX_LIST);
+		});
 
-    describe('matches', function() {
-      it('is an array', () => expect(matches).to.be.instanceof(Array));
-      it('has items', () => expect(matches).to.have.length.above(0));
-    });
+		describe('matches', () => {
+			it('is an array', () => expect(matches).toBeInstanceOf(Array));
+			it('has items', () => expect(matches.length).toBeGreaterThan(0));
+		});
 
-    describe('first match', function() {
-      it('is `hello`', () => expect(matches[0].value).to.equal('hello'));
-      it('is a greeting', () => expect(matches[0].css).to.equal('greeting'));
-    });
+		describe('first match', () => {
+			it('is `hello`', () => expect(matches[0].value).toEqual('hello'));
+			it('is a greeting', () => expect(matches[0].css).toEqual('greeting'));
+		});
 
-    describe('second match', function() {
-      it('is `all`', () => expect(matches[1].value).to.equal('all'));
-      it('is a word', () => expect(matches[1].css).to.equal('word'));
-    });
+		describe('second match', () => {
+			it('is `all`', () => expect(matches[1].value).toEqual('all'));
+			it('is a word', () => expect(matches[1].css).toEqual('word'));
+		});
 
-    describe('third match', function() {
-      it('is `world`', () => expect(matches[2].value).to.equal('world'));
-      it('is a greeting', () => expect(matches[2].css).to.equal('greeting'));
-    });
-  });
+		describe('third match', () => {
+			it('third match - is `world`', () => expect(matches[2].value).toEqual('world'));
+			it('third match - is a greeting', () => expect(matches[2].css).toEqual('greeting'));
+		});
+	});
 });

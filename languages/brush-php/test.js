@@ -1,35 +1,34 @@
-import {expect} from 'chai';
-import {applyRegexList} from 'syntaxhighlighter-match';
-import Brush from './brush';
+import { applyRegexList } from '../../utilities/syntaxhighlighter-match/syntaxhighlighter-match.js';
+import Brush from './brush.js';
 
-const sample = require('fs').readFileSync(`${__dirname}/sample.txt`, 'utf8');
+describe('brush-php', () => {
+	let instance = null;
+	let sample;
 
-describe('brush-php', function() {
-  let instance = null;
+	beforeAll(async() => {
+		instance = new Brush();
+		sample = await (await fetch('/base/languages/brush-php/sample.txt')).text();
+	});
 
-  before(function() {
-    instance = new Brush();
-  });
+	it('has populated code sample', () => {
+		expect(sample).not.toMatch(/^Populate/);
+	});
 
-  it('has populated code sample', function() {
-    expect(sample).to.not.match(/^Populate/);
-  });
+	describe('instance', () => {
+		it('has `regexList`', () => {
+			expect(instance.regexList).toBeDefined();
+		});
+	});
 
-  describe('instance', function() {
-    it('has `regexList`', function() {
-      expect(instance).to.have.property('regexList');
-    });
-  });
+	describe('parsing', () => {
+		let matches = null;
 
-  describe('parsing', function() {
-    var matches = null;
+		beforeAll(() => {
+			matches = applyRegexList(sample, instance.regexList);
+		});
 
-    before(function() {
-      matches = applyRegexList(sample, instance.regexList);
-    });
-
-    it('can parse', function() {
-      expect(matches).to.have.length.above(0);
-    });
-  });
+		it('can parse', () => {
+			expect(matches.length).toBeGreaterThan(0);
+		});
+	});
 });

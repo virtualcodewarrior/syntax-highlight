@@ -1,9 +1,8 @@
-import { applyRegexList } from '../utilities/syntaxhighlighter-match/index.js';
+import { applyRegexList } from '../utilities/syntaxhighlighter-match/syntaxhighlighter-match.js';
 
 function HtmlScript(BrushXML, brushClass) {
-	var scriptBrush,
-		xmlBrush = new BrushXML()
-	;
+	let scriptBrush;
+	const xmlBrush = new BrushXML();
 
 	if (brushClass == null) {
 		return;
@@ -22,18 +21,18 @@ function HtmlScript(BrushXML, brushClass) {
 	this.regexList = xmlBrush.regexList;
 
 	function offsetMatches(matches, offset) {
-		for (var j = 0, l = matches.length; j < l; j++)
+		for (let j = 0, l = matches.length; j < l; j++) {
 			matches[j].index += offset;
+		}
 	}
 
 	function process(match, info) {
-		var code = match.code,
-			results = [],
-			regexList = scriptBrush.regexList,
-			offset = match.index + match.left.length,
-			htmlScript = scriptBrush.htmlScript,
-			matches
-		;
+		const code = match.code;
+		let results = [];
+		const regexList = scriptBrush.regexList;
+		const offset = match.index + match.left.length;
+		const htmlScript = scriptBrush.htmlScript;
+		let matches;
 
 		function add(matches) {
 			results = results.concat(matches);
@@ -44,24 +43,24 @@ function HtmlScript(BrushXML, brushClass) {
 		add(matches);
 
 		// add left script bracket
-		if (htmlScript.left != null && match.left != null) {
+		if (htmlScript.left !== null && match.left !== null) {
 			matches = applyRegexList(match.left, [htmlScript.left]);
 			offsetMatches(matches, match.index);
 			add(matches);
 		}
 
 		// add right script bracket
-		if (htmlScript.right != null && match.right != null) {
+		if (htmlScript.right !== null && match.right !== null) {
 			matches = applyRegexList(match.right, [htmlScript.right]);
 			offsetMatches(matches, match.index + match[0].lastIndexOf(match.right));
 			add(matches);
 		}
 
-		for (var j = 0, l = results.length; j < l; j++)
+		for (let j = 0, l = results.length; j < l; j++)
 			results[j].brushName = brushClass.brushName;
 
 		return results;
 	}
-};
+}
 
 export default HtmlScript;

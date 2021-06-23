@@ -1,35 +1,34 @@
-var chai = require('chai');
-var expect = chai.expect;
-var match = require('syntaxhighlighter-match');
-var Brush = require('./brush');
-var sample = require('fs').readFileSync('./sample.txt', 'utf8');
+import { applyRegexList } from '../../utilities/syntaxhighlighter-match/syntaxhighlighter-match.js';
+import Brush from './brush.js';
 
-describe('brush-coldfusion', function() {
-  var instance = null;
+describe('brush-coldfusion', () => {
+	let instance = null;
+	let sample;
 
-  before(function() {
-    return instance = new Brush();
-  });
+	beforeAll(async() => {
+		instance = new Brush();
+		sample = await (await fetch('/base/languages/brush-coldfusion/sample.txt')).text();
+	});
 
-  it('has populated code sample', function() {
-    return expect(sample).to.not.match(/^Populate/);
-  });
+	it('has populated code sample', () => {
+		expect(sample).not.toMatch(/^Populate/);
+	});
 
-  describe('instance', function() {
-    return it('has `regexList`', function() {
-      return expect(instance).to.have.property('regexList');
-    });
-  });
+	describe('instance', () => {
+		it('has `regexList`', () => {
+			expect(instance.regexList).toBeDefined();
+		});
+	});
 
-  return describe('parsing', function() {
-    var matches = null;
+	describe('parsing', () => {
+		let matches = null;
 
-    before(function() {
-      return matches = match.applyRegexList(sample, instance.regexList);
-    });
+		beforeAll(() => {
+			matches = applyRegexList(sample, instance.regexList);
+		});
 
-    return it('can parse', function() {
-      return expect(matches).to.have.length.above(0);
-    });
-  });
+		it('can parse', () => {
+			expect(matches.length).toBeGreaterThan(0);
+		});
+	});
 });

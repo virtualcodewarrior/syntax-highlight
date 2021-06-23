@@ -1,5 +1,5 @@
 import BrushBase from '../brush-base/brush-base.js';
-import { commonRegExp } from '../../utilities/syntaxhighlighter-regex/index.js';
+import { commonRegExp } from '../../utilities/syntaxhighlighter-regex/syntaxhighlighter-regex.js';
 
 const functions = 'abs acos acosh addcslashes addslashes ' +
   'array_change_key_case array_chunk array_combine array_count_values array_diff ' +
@@ -45,24 +45,24 @@ const keywords = 'abstract and array as break case catch cfunction class clone c
 const constants = '__FILE__ __LINE__ __METHOD__ __FUNCTION__ __CLASS__';
 
 export default class Brush extends BrushBase {
-  static get aliases() {
-    return ['php'];
-  }
+	static get aliases() {
+		return ['php'];
+	}
 
-  constructor() {
-    super();
+	constructor() {
+		super();
 
-    this.regexList = [
-      {regex: commonRegExp.singleLineCComments, css: 'comments'},
-      {regex: commonRegExp.multiLineCComments, css: 'comments'},
-      {regex: commonRegExp.doubleQuotedString, css: 'string'},
-      {regex: commonRegExp.singleQuotedString, css: 'string'},
-      {regex: /\$\w+/g, css: 'variable'},
-      {regex: new RegExp(this.getKeywords(functions), 'gmi'), css: 'functions'},
-      {regex: new RegExp(this.getKeywords(constants), 'gmi'), css: 'constants'},
-      {regex: new RegExp(this.getKeywords(keywords), 'gm'), css: 'keyword'}
-    ];
+		this.regexList = [
+			{ regex: commonRegExp.singleLineCComments, css: 'comments' },
+			{ regex: commonRegExp.multiLineCComments, css: 'comments' },
+			{ regex: commonRegExp.doubleQuotedString, css: 'string' },
+			{ regex: commonRegExp.singleQuotedString, css: 'string' },
+			{ regex: /\$\w+/g, css: 'variable' },
+			{ regex: new RegExp(this.getKeywords(functions), 'gmi'), css: 'functions' },
+			{ regex: new RegExp(this.getKeywords(constants), 'gmi'), css: 'constants' },
+			{ regex: new RegExp(this.getKeywords(keywords), 'gm'), css: 'keyword' },
+		];
 
-    this.forHtmlScript(commonRegExp.phpScriptTags);
-  }
+		this.forHtmlScript(commonRegExp.phpScriptTags);
+	}
 }
