@@ -1,5 +1,5 @@
-import BrushBase from '../../languages/brush-base/brush-base.js';
-import { commonRegExp } from '../../utilities/syntaxhighlighter-regex/syntaxhighlighter-regex.js';
+import BrushBase from '../../src/languages/brush-base/brush-base.js';
+import { commonRegExp } from '../../src/utilities/syntaxhighlighter-regex/syntaxhighlighter-regex.js';
 
 export default class Brush extends BrushBase {
 	constructor() {

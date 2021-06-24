@@ -1,18 +1,20 @@
 {
   "name": "syntaxhighlighter",
   "version": "4.0.1",
+  "type": "module",
   "author": {
     "name": "Alex Gorbatchev",
     "url": "https://github.com/alexgorbatchev"
   },
   "scripts": {
     "start": "http-server ./ -p 8073",
-    "lint": "node ./node_modules/eslint/bin/eslint.js --color -c eslintrc.cjs src/**/*.js test/**/*.js languages/**/*.js utilities/**/*.js",
+    "build": "node ./build.js",
+    "doc": "node ./node_modules/jsdoc/jsdoc.js src -r -d doc -c jsdoc.conf.cjs",
+    "lint": "node ./node_modules/eslint/bin/eslint.js --color -c eslintrc.cjs src/**/*.js test/**/*.js src/languages/**/*.js src/utilities/**/*.js",
     "unittest": "node ./node_modules/karma/bin/karma start karma.conf.cjs --single-run",
     "watch-test": "node ./node_modules/karma/bin/karma start karma.conf.cjs --watch",
     "coverage": "node ./node_modules/karma/bin/karma start karma.conf.cjs coverage --single-run",
-    "test": "npm run lint && npm run unittest",
-    "build": "gulp build --brushes all"
+    "test": "npm run lint && npm run unittest"
   },
   "main": "./src/core.js",
   "repository": {
@@ -20,8 +22,10 @@
     "url": "https://github.com/syntaxhighlighter/syntaxhighlighter.git"
   },
   "devDependencies": {
+    "babel-minify": "^0.5.1",
     "eslint": "^7.29.0",
     "eslint-plugin-jasmine": "^4.1.2",
+    "fs-extra": "^10.0.0",
     "http-server": "^0.12.3",
     "karma": "^6.3.4",
     "karma-chrome-launcher": "^3.1.0",
@@ -29,7 +33,8 @@
     "karma-jasmine": "^4.0.1",
     "karma-jasmine-es6": "0.0.3",
     "karma-jasmine-html-reporter": "^1.6.0",
-    "karma-spec-reporter": "0.0.32"
+    "karma-spec-reporter": "0.0.32",
+    "walk": "^2.3.14"
   },
   "dependencies": {},
   "license": "MIT"

@@ -60,14 +60,10 @@ module.exports = function(config) {
 
 		// list of files / patterns to load in the browser
 		files: [
-			{ pattern: "src/**/*.+(map|html)", type: "module", watched: true, served: true, included: false, second: false, nocache: true },
+			{ pattern: "src/**/*.+(map|html|txt|css)", type: "module", watched: true, served: true, included: false, second: false, nocache: true },
 			{ pattern: "src/**/*.+(js)", type: "module", watched: true, served: true, second: false, nocache: true },
 			{ pattern: "test/**/*.html", type: "module", watched: true, served: true, included: false, second: false, nocache: true },
 			{ pattern: "test/**/*.js", type: "module", watched: true, served: true, second: true, nocache: true },
-			{ pattern: "utilities/**/*.+(js)", type: "module", watched: true, served: true, second: true, nocache: true },
-			{ pattern: "languages/**/*.+(js)", type: "module", watched: true, served: true, second: true, nocache: true },
-			{ pattern: "languages/**/*.+(txt)", type: "module", watched: true, served: true, included: false, second: true, nocache: true },
-			{ pattern: "themes/**/*.+(css)", type: "module", watched: true, served: true, included: false, second: false, nocache: true },
 		],
 
 		// list of files / patterns to exclude

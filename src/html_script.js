@@ -1,4 +1,4 @@
-import { applyRegexList } from '../utilities/syntaxhighlighter-match/syntaxhighlighter-match.js';
+import { applyRegexList } from './utilities/syntaxhighlighter-match/syntaxhighlighter-match.js';
 
 function HtmlScript(BrushXML, brushClass) {
 	let scriptBrush;
@@ -11,11 +11,11 @@ function HtmlScript(BrushXML, brushClass) {
 	scriptBrush = new brushClass();
 
 	if (scriptBrush.htmlScript == null) {
-		throw new Error('Brush wasn\'t configured for html-script option: ' + brushClass.brushName);
+		throw new Error(`Brush wasn't configured for html-script option: ${brushClass.brushName}`);
 	}
 
 	xmlBrush.regexList.push(
-		{ regex: scriptBrush.htmlScript.code, func: process }
+		{ regex: scriptBrush.htmlScript.code, func: process },
 	);
 
 	this.regexList = xmlBrush.regexList;
@@ -56,8 +56,7 @@ function HtmlScript(BrushXML, brushClass) {
 			add(matches);
 		}
 
-		for (let j = 0, l = results.length; j < l; j++)
-			results[j].brushName = brushClass.brushName;
+		for (let j = 0, l = results.length; j < l; j++) { results[j].brushName = brushClass.brushName; }
 
 		return results;
 	}

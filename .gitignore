@@ -5,3 +5,4 @@ bower_components
 .projects-cache.json
 npm-debug.log
 .idea
+dist/

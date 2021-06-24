@@ -1,5 +1,5 @@
-import BrushBase from '../../languages/brush-base/brush-base.js';
-import { commonRegExp as regexLib } from '../../utilities/syntaxhighlighter-regex/syntaxhighlighter-regex.js';
+import BrushBase from '../../src/languages/brush-base/brush-base.js';
+import { commonRegExp as regexLib } from '../../src/utilities/syntaxhighlighter-regex/syntaxhighlighter-regex.js';
 
 function Brush() {
 	this.regexList = [

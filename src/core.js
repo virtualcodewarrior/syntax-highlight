@@ -1,14 +1,14 @@
-import optsParser from '../utilities/opts-parser/opts-parser.js';
-import { Match, applyRegexList } from '../utilities/syntaxhighlighter-match/syntaxhighlighter-match.js';
-import Renderer from '../utilities/syntaxhighlighter-html-renderer/syntaxhighlighter-html-renderer.js';
-import { commonRegExp } from '../utilities/syntaxhighlighter-regex/syntaxhighlighter-regex.js';
+import optsParser from './utilities/opts-parser/opts-parser.js';
+import { Match, applyRegexList } from './utilities/syntaxhighlighter-match/syntaxhighlighter-match.js';
+import Renderer from './utilities/syntaxhighlighter-html-renderer/syntaxhighlighter-html-renderer.js';
+import { commonRegExp } from './utilities/syntaxhighlighter-regex/syntaxhighlighter-regex.js';
 import utils from './utils.js';
 import transformers from './transformers/index.js';
 import dom from './dom.js';
 import config from './config.js';
 import defaults from './defaults.js';
 import HtmlScript from './html_script.js';
-import BrushBase from '../languages/brush-base/brush-base.js';
+import BrushBase from './languages/brush-base/brush-base.js';
 
 let findBrush = null;
 let stripCData = null;
@@ -173,7 +173,7 @@ findBrush = async(alias) => {
 	sh.vars.discoveredBrushes = sh.vars.discoveredBrushes ?? {};
 	let brush = sh.vars.discoveredBrushes[alias];
 	if (!brush) {
-		const result = await import(`../languages/brush-${alias}/brush.js`);
+		const result = await import(`./languages/brush-${alias}/brush.js`);
 		if (result) {
 			sh.vars.discoveredBrushes[alias] = brush = result.default;
 		}
