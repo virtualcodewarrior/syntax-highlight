@@ -3,9 +3,8 @@
  * @param {String} block Block of text.
  * @return {Array} Returns array of lines.
  */
-function splitLines(block)
-{
-  return block.split(/\r?\n/);
+function splitLines(block) {
+	return block.split(/\r?\n/);
 }
 
 /**
@@ -13,22 +12,20 @@ function splitLines(block)
  * @param {Object} str      Input string.
  * @param {Object} callback   Callback function taking one string argument and returning a string.
  */
-function eachLine(str, callback)
-{
-  var lines = splitLines(str);
+function eachLine(str, callback) {
+	const lines = splitLines(str);
 
-  for (var i = 0, l = lines.length; i < l; i++)
-    lines[i] = callback(lines[i], i);
+	for (let i = 0, l = lines.length; i < l; i++)
+		lines[i] = callback(lines[i], i);
 
-  return lines.join('\n');
+	return lines.join('\n');
 }
 
 /**
  * Generates a unique element ID.
  */
-function guid(prefix)
-{
-  return (prefix || '') + Math.round(Math.random() * 1000000).toString();
+function guid(prefix) {
+	return (prefix || '') + Math.round(Math.random() * 1000000).toString();
 }
 
 /**
@@ -38,17 +35,16 @@ function guid(prefix)
  * @param {Object} obj2 Second object.
  * @return {Object} Returns combination of both objects.
  */
-function merge(obj1, obj2)
-{
-  var result = {}, name;
+function merge(obj1, obj2) {
+	const result = {};
 
-  for (name in obj1)
-    result[name] = obj1[name];
+	for (const name in obj1)
+		result[name] = obj1[name];
 
-  for (name in obj2)
-    result[name] = obj2[name];
+	for (const name in obj2)
+		result[name] = obj2[name];
 
-  return result;
+	return result;
 }
 
 /**
@@ -57,9 +53,8 @@ function merge(obj1, obj2)
  * @param {String} str   String to trim.
  * @return {String}      Returns string without leading and following white space characters.
  */
-function trim(str)
-{
-  return str.replace(/^\s+|\s+$/g, '');
+function trim(str) {
+	return str.replace(/^\s+|\s+$/g, '');
 }
 
 /**
@@ -68,9 +63,8 @@ function trim(str)
  * @param {List} source Source list.
  * @return {Array} Returns array.
  */
-function toArray(source)
-{
-  return Array.prototype.slice.apply(source);
+function toArray(source) {
+	return Array.prototype.slice.apply(source);
 }
 
 /**
@@ -78,18 +72,17 @@ function toArray(source)
  * @param {String} value Input string.
  * @return {Boolean} Returns true if input was "true", false if input was "false" and value otherwise.
  */
-function toBoolean(value)
-{
-  var result = {"true" : true, "false" : false}[value];
-  return result == null ? value : result;
+function toBoolean(value) {
+	const result = { 'true': true, 'false': false }[value];
+	return result === null ? value : result;
 }
 
 export default {
-  splitLines: splitLines,
-  eachLine: eachLine,
-  guid: guid,
-  merge: merge,
-  trim: trim,
-  toArray: toArray,
-  toBoolean: toBoolean
+	splitLines: splitLines,
+	eachLine: eachLine,
+	guid: guid,
+	merge: merge,
+	trim: trim,
+	toArray: toArray,
+	toBoolean: toBoolean
 };

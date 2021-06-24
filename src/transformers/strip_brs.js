@@ -6,4 +6,4 @@ export default function(code, opts) {
 	}
 
 	return code;
-};
+}

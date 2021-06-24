@@ -1,4 +1,4 @@
-export default function(code, opts) {
+export default function(code) {
 	return code
 		// This is a special trim which only removes first and last empty lines
 		// and doesn't affect valid leading space on the first line.
