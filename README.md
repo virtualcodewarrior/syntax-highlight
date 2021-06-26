@@ -53,14 +53,14 @@ Or to import an external source file, just specify its source url
 </syntax-highlight>
 ```
 Further documentation about using the highlighter as a web component can be found here:  
-- [syntax-highlight webcomponent](./webcomponent/README.md).
+- [syntax-highlight webcomponent](./src/webcomponent/README.md).
 
 ## Legacy method whole page
 To install and use the highlighter on a whole page to automatically highlight code wrapped in `pre` tags or CData in a script, follow this link: 
 - [legacy method](./legacy.md).
 
 # Brush API
-Every syntaxhighlight brush extends `BaseBrush` class defined in [brush-base](https://github.com/virtualcodewarrior/syntaxhighlight/src/languages/brush-base).
+Every syntaxhighlight brush extends `BaseBrush` class defined in [brush-base](https://github.com/virtualcodewarrior/syntaxhighlight/tree/develop/src/languages/brush-base).
 This class exposes the following methods:
 
 * `getKeywords(str)`
