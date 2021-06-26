@@ -27,16 +27,21 @@ window.customElements.define(webComponentName, class extends webComponentBaseCla
 	}
 
 	static get properties() {
+		const observer = (instance) => { handleHighlight?.(instance); }
 		return {
 			language: {
 				type: String,
 				value: '',
 				reflectToAttribute: true,
+				observer: (instance) => {
+					instance.language = instance.language.toLowerCase();
+				},
 			},
 			src: {
 				type: String,
 				value: '',
 				reflectToAttribute: true,
+				observer,
 			},
 			theme: {
 				type: String,
@@ -59,57 +64,43 @@ window.customElements.define(webComponentName, class extends webComponentBaseCla
 				type: Boolean,
 				value: true,
 				reflectToAttribute: true,
-				observer: (instance) => {
-					handleHighlight?.(instance);
-				},
+				observer,
 			},
 			firstLine: {
 				type: Number,
 				value: 1,
 				reflectToAttribute: true,
-				observer: (instance) => {
-					handleHighlight?.(instance);
-				},
+				observer,
 			},
 			gutter: {
 				type: Boolean,
 				value: true,
 				reflectToAttribute: true,
-				observer: (instance) => {
-					handleHighlight?.(instance);
-				},
+				observer,
 			},
 			highlight: {
 				type: Array,
 				value: [],
 				reflectToAttribute: true,
-				observer: (instance) => {
-					handleHighlight?.(instance);
-				},
+				observer,
 			},
 			htmlScript: {
 				type: Boolean,
 				value: false,
 				reflectToAttribute: true,
-				observer: (instance) => {
-					handleHighlight?.(instance);
-				},
+				observer,
 			},
 			smartTabs: {
 				type: Boolean,
 				value: true,
 				reflectToAttribute: true,
-				observer: (instance) => {
-					handleHighlight?.(instance);
-				},
+				observer,
 			},
 			tabSize: {
 				type: Number,
 				value: 4,
 				reflectToAttribute: true,
-				observer: (instance) => {
-					handleHighlight?.(instance);
-				},
+				observer,
 			},
 			noCopyButton: {
 				type: Boolean,
