@@ -1,0 +1,392 @@
+.syntaxhighlight a,
+.syntaxhighlight div,
+.syntaxhighlight code,
+.syntaxhighlight table,
+.syntaxhighlight table td,
+.syntaxhighlight table tr,
+.syntaxhighlight table tbody,
+.syntaxhighlight table thead,
+.syntaxhighlight table caption,
+.syntaxhighlight textarea {
+	-moz-border-radius: 0 0 0 0 !important;
+	-webkit-border-radius: 0 0 0 0 !important;
+	background: none !important;
+	border: 0 !important;
+	bottom: auto !important;
+	float: none !important;
+	height: auto !important;
+	left: auto !important;
+	line-height: 1.1em !important;
+	margin: 0 !important;
+	outline: 0 !important;
+	overflow: visible !important;
+	padding: 0 !important;
+	position: static !important;
+	right: auto !important;
+	text-align: left !important;
+	top: auto !important;
+	vertical-align: baseline !important;
+	width: auto !important;
+	box-sizing: content-box !important;
+	font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+	font-weight: normal !important;
+	font-style: normal !important;
+	font-size: 1em !important;
+	min-height: inherit !important;
+	min-height: auto !important;
+}
+
+.syntaxhighlight {
+	width: 100% !important;
+	margin: 1em 0 1em 0 !important;
+	position: relative !important;
+	overflow-x: auto !important;
+	font-size: 1em !important;
+	padding: 2px 0 !important;
+}
+
+.syntaxhighlight .container:before, .syntaxhighlight .container:after {
+	content: none !important;
+}
+
+.syntaxhighlight.source {
+	overflow: hidden !important;
+}
+
+.syntaxhighlight .bold {
+	font-weight: bold !important;
+}
+
+.syntaxhighlight .italic {
+	font-style: italic !important;
+}
+
+.syntaxhighlight .line {
+	white-space: pre !important;
+}
+
+.syntaxhighlight table {
+	width: 100% !important;
+}
+
+.syntaxhighlight table caption {
+	text-align: left !important;
+	padding: .5em 0 0.5em 1em !important;
+}
+
+.syntaxhighlight table td.code {
+	width: 100% !important;
+}
+
+.syntaxhighlight table td.code .container {
+	position: relative !important;
+}
+
+.syntaxhighlight table td.code .container textarea {
+	box-sizing: border-box !important;
+	position: absolute !important;
+	left: 0 !important;
+	top: 0 !important;
+	width: 100% !important;
+	height: 100% !important;
+	border: none !important;
+	background: white !important;
+	padding-left: 1em !important;
+	overflow: hidden !important;
+	white-space: pre !important;
+}
+
+.syntaxhighlight table td.gutter .line {
+	text-align: right !important;
+	padding: 0 0.5em 0 1em !important;
+}
+
+.syntaxhighlight table td.code .line {
+	padding: 0 1em !important;
+}
+
+.syntaxhighlight.nogutter td.code .container textarea, .syntaxhighlight.nogutter td.code .line {
+	padding-left: 0 !important;
+}
+
+.syntaxhighlight.show {
+	display: block !important;
+}
+
+.syntaxhighlight.collapsed table {
+	display: none !important;
+}
+
+.syntaxhighlight.collapsed .toolbar {
+	padding: 0.1em 0.8em 0 0.8em !important;
+	font-size: 1em !important;
+	position: static !important;
+	width: auto !important;
+	height: auto !important;
+}
+
+.syntaxhighlight.collapsed .toolbar span {
+	display: inline !important;
+	margin-right: 1em !important;
+}
+
+.syntaxhighlight.collapsed .toolbar span a {
+	padding: 0 !important;
+	display: none !important;
+}
+
+.syntaxhighlight.collapsed .toolbar span a.expandSource {
+	display: inline !important;
+}
+
+.syntaxhighlight .toolbar {
+	position: absolute !important;
+	right: 1px !important;
+	top: 1px !important;
+	width: 11px !important;
+	height: 11px !important;
+	font-size: 10px !important;
+	z-index: 10 !important;
+}
+
+.syntaxhighlight .toolbar span.title {
+	display: inline !important;
+}
+
+.syntaxhighlight .toolbar a {
+	display: block !important;
+	text-align: center !important;
+	text-decoration: none !important;
+	padding-top: 1px !important;
+}
+
+.syntaxhighlight .toolbar a.expandSource {
+	display: none !important;
+}
+
+.syntaxhighlight.ie {
+	font-size: .9em !important;
+	padding: 1px 0 1px 0 !important;
+}
+
+.syntaxhighlight.ie .toolbar {
+	line-height: 8px !important;
+}
+
+.syntaxhighlight.ie .toolbar a {
+	padding-top: 0 !important;
+}
+
+.syntaxhighlight.printing .line.alt1 .content,
+.syntaxhighlight.printing .line.alt2 .content,
+.syntaxhighlight.printing .line.highlighted .number,
+.syntaxhighlight.printing .line.highlighted.alt1 .content,
+.syntaxhighlight.printing .line.highlighted.alt2 .content {
+	background: none !important;
+}
+
+.syntaxhighlight.printing .line .number {
+	color: #bbbbbb !important;
+}
+
+.syntaxhighlight.printing .line .content {
+	color: black !important;
+}
+
+.syntaxhighlight.printing .toolbar {
+	display: none !important;
+}
+
+.syntaxhighlight.printing a {
+	text-decoration: none !important;
+}
+
+.syntaxhighlight.printing .plain, .syntaxhighlight.printing .plain a {
+	color: black !important;
+}
+
+.syntaxhighlight.printing .comments, .syntaxhighlight.printing .comments a {
+	color: #008200 !important;
+}
+
+.syntaxhighlight.printing .string, .syntaxhighlight.printing .string a {
+	color: blue !important;
+}
+
+.syntaxhighlight.printing .keyword {
+	color: #006699 !important;
+	font-weight: bold !important;
+}
+
+.syntaxhighlight.printing .preprocessor {
+	color: gray !important;
+}
+
+.syntaxhighlight.printing .variable {
+	color: #aa7700 !important;
+}
+
+.syntaxhighlight.printing .value {
+	color: #009900 !important;
+}
+
+.syntaxhighlight.printing .functions {
+	color: #ff1493 !important;
+}
+
+.syntaxhighlight.printing .constants {
+	color: #0066cc !important;
+}
+
+.syntaxhighlight.printing .script {
+	font-weight: bold !important;
+}
+
+.syntaxhighlight.printing .color1, .syntaxhighlight.printing .color1 a {
+	color: gray !important;
+}
+
+.syntaxhighlight.printing .color2, .syntaxhighlight.printing .color2 a {
+	color: #ff1493 !important;
+}
+
+.syntaxhighlight.printing .color3, .syntaxhighlight.printing .color3 a {
+	color: red !important;
+}
+
+.syntaxhighlight.printing .break, .syntaxhighlight.printing .break a {
+	color: black !important;
+}
+
+.syntaxhighlight {
+	background-color: var(--background, white) !important;
+}
+
+.syntaxhighlight .line.alt1 {
+	background-color: var(--line_alt1_background, var(--background, white)) !important;
+}
+
+.syntaxhighlight .line.alt2 {
+	background-color: var(--line_alt2_background, var(--background, white)) !important;
+}
+
+.syntaxhighlight .line.highlighted.alt1, .syntaxhighlight .line.highlighted.alt2 {
+	background-color: var(--line_highlighted_background, #e0e0e0) !important;
+}
+
+.syntaxhighlight .line.highlighted.number {
+	color: var(--line_highlighted_number, black) !important;
+}
+
+.syntaxhighlight table caption {
+	color: var(--caption_color, var(--code_plain, black)) !important;
+}
+
+.syntaxhighlight table td.code .container textarea {
+	background: var(--background, white);
+	color: var(--code_plain, black);
+}
+
+.syntaxhighlight .gutter {
+	color: var(--gutter_text, #afafaf) !important;
+}
+
+.syntaxhighlight .gutter .line {
+	border-right: var(--gutter_border, 3px solid var(--gutter_border_color, #6ce26c)) !important;
+}
+
+.syntaxhighlight .gutter .line.highlighted {
+	background-color: var(--gutter_border_color, #6ce26c) !important;
+	color: var(--background, white) !important;
+}
+
+.syntaxhighlight.printing .line .content {
+	border: none !important;
+}
+
+.syntaxhighlight.collapsed {
+	overflow: visible !important;
+}
+
+.syntaxhighlight.collapsed .toolbar {
+	color: var(--toolbar_collapsed_a, #00f) !important;
+	background: var(--toolbar_collapsed_background, #fff) !important;
+	border: var(--toolbar_collapsed_border, 1px solid var(--gutter_border_color, #6ce26c)) !important;
+}
+
+.syntaxhighlight.collapsed .toolbar a {
+	color: var(--toolbar_collapsed_a, #00f) !important;
+}
+
+.syntaxhighlight.collapsed .toolbar a:hover {
+	color: var(--toolbar_collapsed_a_hover, #f00) !important;
+}
+
+.syntaxhighlight .toolbar {
+	color: var(--toolbar_a, #fff) !important;
+	background: var(--toolbar_background, var(--gutter_border_color, #6ce26c)) !important;
+	border: var(--toolbar_border, none) !important;
+}
+
+.syntaxhighlight .toolbar a {
+	color: var(--toolbar_a, #fff) !important;
+}
+
+.syntaxhighlight .toolbar a:hover {
+	color: var(--toolbar_a_hover, #000) !important;
+}
+
+.syntaxhighlight .plain, .syntaxhighlight .plain a {
+	color: var(--code_plain, black) !important;
+}
+
+.syntaxhighlight .comments, .syntaxhighlight .comments a {
+	color: var(--code_comments, #008200) !important;
+}
+
+.syntaxhighlight .string, .syntaxhighlight .string a {
+	color: var(--code_string, blue) !important;
+}
+
+.syntaxhighlight .keyword {
+	font-weight: bold !important;
+	color: var(--code_keyword, #006699) !important;
+}
+
+.syntaxhighlight .preprocessor {
+	color: var(--code_preprocessor, gray) !important;
+}
+
+.syntaxhighlight .variable {
+	color: var(--code_variable, #aa7700) !important;
+}
+
+.syntaxhighlight .value {
+	color: var(--code_value, #009900) !important;
+}
+
+.syntaxhighlight .functions {
+	color: var(--code_functions, #ff1493) !important;
+}
+
+.syntaxhighlight .constants {
+	color: var(--code_constants, #0066cc) !important;
+}
+
+.syntaxhighlight .script {
+	font-weight: bold !important;
+	color: var(--code_script, var(--code_keyword, #006699)) !important;
+	background-color: var(--code_script_background, transparent) !important;
+}
+
+.syntaxhighlight .color1, .syntaxhighlight .color1 a {
+	color: var(--code_color1, gray) !important;
+}
+
+.syntaxhighlight .color2, .syntaxhighlight .color2 a {
+	color: var(--code_color2, #ff1493) !important;
+}
+
+.syntaxhighlight .color3, .syntaxhighlight .color3 a {
+	color: var(--code_color3, red) !important;
+}

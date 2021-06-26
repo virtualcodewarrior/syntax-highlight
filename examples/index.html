@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" type="text/css" href="../src/themes/theme-default/theme.css">
+</head>
+<body>
+<div id="examples">
+
+</div>
+<script type="module">
+	import syntaxHighlight from '../src/syntaxhighlight.js';
+
+	const showExamples = async () => {
+		const example = document.getElementById('examples');
+		for (const language of [
+			'actionscript3',
+			'applescript',
+			'as3',
+			'bash',
+			'coldfusion',
+			'cpp',
+			'csharp',
+			'css',
+			'delphi',
+			'diff',
+			'erlang',
+			'groovy',
+			'haxe',
+			'java',
+			'javafx',
+			'javascript',
+			'perl',
+			'php',
+			'plain',
+			'powershell',
+			'python',
+			'ruby',
+			'sass',
+			'scala',
+			'sql',
+			'swift',
+			'tap',
+			'typescript',
+			'vb',
+			'xml',
+		]) {
+			const result = await fetch(`../src/languages/brush-${language}/sample.txt`);
+			if (result.ok) {
+				const text = await result.text();
+				example.innerHTML += `<h2>${language}</h2>\n<pre id="${language}" class="brush: ${language}"></pre>`;
+				document.getElementById(language).textContent = text;
+			}
+		}
+		syntaxHighlight.highlight(window.syntaxHighlightConfig || {});
+	}
+
+	showExamples();
+</script>
+</body>
+</html>

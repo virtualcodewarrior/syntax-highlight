@@ -1,0 +1,55 @@
+/* Eclipse IDE SyntaxHighlighter color theme */
+/* (C) Code-House */
+/* :http//blog.code-house.org/2009/10/xml-i-adnotacje-kod-ogolnego-przeznaczenia-i-jpa/ */
+
+@import "../theme-base/theme-base.css";
+
+.syntaxhighlight {
+  --background: #fff;
+
+  --line_highlighted_background: #c3defe;
+  --line_highlighted_number: #fff;
+
+  --gutter_text: #787878;
+  --gutter_border_color: #d4d0c8;
+
+  --toolbar_collapsed_a: #3f5fbf;
+  --toolbar_collapsed_a_hover: #aa7700;
+  --toolbar_collapsed_background: #fff;
+
+  --toolbar_a: #a0a0a0;
+  --toolbar_a_hover: red;
+
+  --code_plain: black;
+  --code_comments: #3f5fbf;
+  --code_string: #2a00ff;
+  --code_keyword: #7f0055;
+  --code_preprocessor: #646464;
+  --code_variable: #aa7700;
+  --code_value: #009900;
+  --code_functions: #ff1493;
+  --code_constants: #0066cc;
+  --code_color1: gray;
+  --code_color2: #ff1493;
+  --code_color3: red;
+}
+
+.syntaxhighlight .keyword {
+  font-weight: bold !important;
+}
+
+.syntaxhighlight .xml .keyword {
+  color: #3f7f7f !important;
+  font-weight: normal !important;
+}
+
+.syntaxhighlight .xml .color1,
+.syntaxhighlight .xml .color1 a {
+  color: #7f007f !important;
+}
+
+.syntaxhighlight .xml .string {
+  font-style: italic !important;
+  color: #2a00ff !important;
+}
+
