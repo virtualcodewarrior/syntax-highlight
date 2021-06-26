@@ -1,7 +1,7 @@
 export default {
   space: '&nbsp;',
 
-  /** Enables use of <SCRIPT type="syntaxhighlighter" /> tags. */
+  /** Enables use of <SCRIPT type="syntaxhighlight" /> tags. */
   useScriptTags: true,
 
   /** Blogger mode flag. */

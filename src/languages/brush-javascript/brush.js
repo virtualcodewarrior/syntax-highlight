@@ -1,6 +1,6 @@
 import BrushBase from '../brush-base/brush-base.js';
-import { commonRegExp as regexLib } from '../../utilities/syntaxhighlighter-regex/syntaxhighlighter-regex.js';
-import xRegExp from '../../utilities/syntaxhighlighter-regex/xregexp.js';
+import { commonRegExp as regexLib } from '../../utilities/syntaxhighlight-regex/syntaxhighlight-regex.js';
+import xRegExp from '../../utilities/syntaxhighlight-regex/xregexp.js';
 
 function Brush() {
 	const keywords = `arguments as async await break case catch class const continue 

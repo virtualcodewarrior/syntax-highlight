@@ -8,7 +8,7 @@ $wgExtensionCredits['other'][] = array(
   'name' => 'SyntaxHighlighter',
   'author' => array('Alex Gorbatchev'),
   'version' => '1.0',
-  'url' => 'http://alexgorbatchev.com/projects/syntaxhighlighter',
+  'url' => 'http://alexgorbatchev.com/projects/syntaxhighlight',
   'description' => 'Provides tight integration with SyntaxHighlighter.'
 );
  

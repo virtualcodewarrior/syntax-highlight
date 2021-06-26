@@ -1,8 +1,8 @@
 # unindenter
 
 [![GratiPay](https://img.shields.io/gratipay/user/alexgorbatchev.svg)](https://gratipay.com/alexgorbatchev/)
-[![Build Status](https://travis-ci.org/syntaxhighlighter/unindenter.svg)](https://travis-ci.org/syntaxhighlighter/unindenter)
-[![Coverage](https://img.shields.io/codecov/c/github/syntaxhighlighter/unindenter.svg)](https://codecov.io/github/syntaxhighlighter/unindenter)
+[![Build Status](https://travis-ci.org/syntaxhighlight/unindenter.svg)](https://travis-ci.org/syntaxhighlight/unindenter)
+[![Coverage](https://img.shields.io/codecov/c/github/syntaxhighlight/unindenter.svg)](https://codecov.io/github/syntaxhighlight/unindenter)
 ![Downloads](https://img.shields.io/npm/dm/unindenter.svg)
 ![Version](https://img.shields.io/npm/v/unindenter.svg)
 

@@ -1,4 +1,4 @@
-import { applyRegexList } from '../../utilities/syntaxhighlighter-match/syntaxhighlighter-match.js';
+import { applyRegexList } from '../../utilities/syntaxhighlight-match/syntaxhighlight-match.js';
 import Brush from './brush.js';
 
 describe('brush-haxe', () => {

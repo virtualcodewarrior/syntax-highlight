@@ -1,9 +1,9 @@
 import BrushBase from '../brush-base/brush-base.js';
-import { commonRegExp as regexLib } from '../../utilities/syntaxhighlighter-regex/syntaxhighlighter-regex.js';
+import { commonRegExp as regexLib } from '../../utilities/syntaxhighlight-regex/syntaxhighlight-regex.js';
 
 function Brush() {
 	// Contributed by Jen
-	// http://www.jensbits.com/2009/05/14/coldfusion-brush-for-syntaxhighlighter-plus
+	// http://www.jensbits.com/2009/05/14/coldfusion-brush-for-syntaxhighlight-plus
 	const funcs = 'Abs ACos AddSOAPRequestHeader AddSOAPResponseHeader AjaxLink AjaxOnLoad ArrayAppend ArrayAvg ArrayClear ArrayDeleteAt ' +
 		'ArrayInsertAt ArrayIsDefined ArrayIsEmpty ArrayLen ArrayMax ArrayMin ArraySet ArraySort ArraySum ArraySwap ArrayToList ' +
 		'Asc ASin Atn BinaryDecode BinaryEncode BitAnd BitMaskClear BitMaskRead BitMaskSet BitNot BitOr BitSHLN BitSHRN BitXor ' +

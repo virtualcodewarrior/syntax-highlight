@@ -1,8 +1,8 @@
 # retabber
 
 [![GratiPay](https://img.shields.io/gratipay/user/alexgorbatchev.svg)](https://gratipay.com/alexgorbatchev/)
-[![Build Status](https://travis-ci.org/syntaxhighlighter/retabber.svg)](https://travis-ci.org/syntaxhighlighter/retabber)
-[![Coverage](https://img.shields.io/codecov/c/github/syntaxhighlighter/retabber.svg)](https://codecov.io/github/syntaxhighlighter/retabber)
+[![Build Status](https://travis-ci.org/syntaxhighlight/retabber.svg)](https://travis-ci.org/syntaxhighlight/retabber)
+[![Coverage](https://img.shields.io/codecov/c/github/syntaxhighlight/retabber.svg)](https://codecov.io/github/syntaxhighlight/retabber)
 ![Downloads](https://img.shields.io/npm/dm/retabber.svg)
 ![Version](https://img.shields.io/npm/v/retabber.svg)
 

@@ -10,7 +10,7 @@
 
 </div>
 <script type="module">
-	import SyntaxHighlighter, { registerBrush } from '../src/core.js';
+	import syntaxHighlight from '../src/syntax-highlight.js';
 
 	const showExamples = async () => {
 		const example = document.getElementById('examples');
@@ -53,7 +53,7 @@
 				document.getElementById(language).textContent = text;
 			}
 		}
-		SyntaxHighlighter.highlight(window.syntaxhighlighterConfig || {});
+		syntaxHighlight.highlight(window.syntaxHighlightConfig || {});
 	}
 
 	showExamples();

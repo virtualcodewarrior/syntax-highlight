@@ -1,8 +1,8 @@
 # opts-parser
 
 [![GratiPay](https://img.shields.io/gratipay/user/alexgorbatchev.svg)](https://gratipay.com/alexgorbatchev/)
-[![Build Status](https://travis-ci.org/syntaxhighlighter/opts-parser.svg)](https://travis-ci.org/syntaxhighlighter/opts-parser)
-[![Coverage](https://img.shields.io/codecov/c/github/syntaxhighlighter/opts-parser.svg)](https://codecov.io/github/syntaxhighlighter/opts-parser)
+[![Build Status](https://travis-ci.org/syntaxhighlight/opts-parser.svg)](https://travis-ci.org/syntaxhighlight/opts-parser)
+[![Coverage](https://img.shields.io/codecov/c/github/syntaxhighlight/opts-parser.svg)](https://codecov.io/github/syntaxhighlight/opts-parser)
 ![Downloads](https://img.shields.io/npm/dm/opts-parser.svg)
 ![Version](https://img.shields.io/npm/v/opts-parser.svg)
 
@@ -12,7 +12,7 @@ This was an old school way of passing random canfiguration values through `class
 
 ## Important
 
-This module depends on a verion of [XRegExp](https://github.com/slevithan/xregexp) that is bundled in [syntaxhighlighter-regex](https://github.com/syntaxhighlighter/syntaxhighlighter-regex). At the time of writing, the bundled version `3.1.0-dev` is unreleased.
+This module depends on a verion of [XRegExp](https://github.com/slevithan/xregexp) that is bundled in [syntaxhighlight-regex](https://github.com/syntaxhighlight/syntaxhighlight-regex). At the time of writing, the bundled version `3.1.0-dev` is unreleased.
 
 ## Installation
 

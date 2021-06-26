@@ -290,7 +290,7 @@ Renderer.prototype = {
 		const opts = _this.opts;
 		const code = _this.code;
 		const matches = _this.matches;
-		const classes = ['syntaxhighlighter'];
+		const classes = ['syntaxhighlight'];
 		let lineNumbers;
 		let html;
 

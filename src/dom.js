@@ -1,6 +1,6 @@
 /**
- * Finds all &lt;SCRIPT TYPE="text/syntaxhighlighter" /> elementss.
- * Finds both "text/syntaxhighlighter" and "syntaxhighlighter"
+ * Finds all &lt;SCRIPT TYPE="text/syntaxhighlight" /> elementss.
+ * Finds both "text/syntaxhighlight" and "syntaxhighlight"
  * ...in order to make W3C validator happy with subtype and backwardscompatible without subtype
  * @return {Array} Returns array of all found SyntaxHighlighter tags.
  */
@@ -9,7 +9,7 @@ function getSyntaxHighlighterScriptTags() {
 	const result = [];
 
 	for (let i = 0; i < tags.length; i++)
-		if (tags[i].type === 'text/syntaxhighlighter' || tags[i].type === 'syntaxhighlighter') {
+		if (tags[i].type === 'text/syntaxhighlight' || tags[i].type === 'syntaxhighlight') {
 			result.push(tags[i]);
 		}
 
@@ -153,7 +153,7 @@ function getElementsByTagName(name) {
 function findElementsToHighlight(opts) {
 	const elements = getElementsByTagName(opts['tagName']);
 
-	// support for <SCRIPT TYPE="syntaxhighlighter" /> feature
+	// support for <SCRIPT TYPE="syntaxhighlight" /> feature
 	if (opts['useScriptTags']) {
 		const scripts = getElementsByTagName('script');
 
@@ -176,7 +176,7 @@ function create(name) {
  */
 function quickCodeHandler(e) {
 	const target = e.target;
-	const highlighterDiv = findParentElement(target, '.syntaxhighlighter');
+	const highlighterDiv = findParentElement(target, '.syntaxhighlight');
 	const container = findParentElement(target, '.container');
 	const textarea = document.createElement('textarea');
 
@@ -203,7 +203,7 @@ function quickCodeHandler(e) {
 	code = code.replace(/\u00a0/g, ' ');
 
 	// inject <textarea/> tag
-	textarea.readOnly = true; // https://github.com/syntaxhighlighter/syntaxhighlighter/pull/329
+	textarea.readOnly = true; // https://github.com/syntaxhighlight/syntaxhighlight/pull/329
 	textarea.appendChild(document.createTextNode(code));
 	container.appendChild(textarea);
 

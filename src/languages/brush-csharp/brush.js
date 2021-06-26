@@ -1,6 +1,6 @@
 import BrushBase from '../brush-base/brush-base.js';
-import { commonRegExp as regexLib } from '../../utilities/syntaxhighlighter-regex/syntaxhighlighter-regex.js';
-import { Match } from '../../utilities/syntaxhighlighter-match/lib/match.js';
+import { commonRegExp as regexLib } from '../../utilities/syntaxhighlight-regex/syntaxhighlight-regex.js';
+import { Match } from '../../utilities/syntaxhighlight-match/lib/match.js';
 
 function Brush() {
 	const keywords = 'abstract as base bool break byte case catch char checked class const ' +
