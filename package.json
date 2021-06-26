@@ -6,7 +6,6 @@
     "name": "Alex Gorbatchev",
     "url": "https://github.com/alexgorbatchev"
   },
-  "collaborators": ["Rodney Draaisma"],
   "scripts": {
     "build": "node ./build.js",
     "doc": "node ./node_modules/jsdoc/jsdoc.js src -r -d doc -c jsdoc.conf.cjs",

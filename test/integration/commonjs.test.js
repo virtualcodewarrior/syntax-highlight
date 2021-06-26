@@ -1,4 +1,4 @@
-import SyntaxHighlighter, { registerBrush } from '../../src/syntax-highlight.js';
+import SyntaxHighlighter, { registerBrush } from '../../src/syntaxhighlight.js';
 import Brush from '../fixtures/test_brush_v4.js';
 
 describe('integration/commonjs', () => {

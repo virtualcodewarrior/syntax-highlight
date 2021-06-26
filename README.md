@@ -1,15 +1,15 @@
-this is forked from [https://github.com/Syntax-Highlight](https://github.com/Syntax-Highlight)
+this is forked from [https://github.com/syntaxhighlighter](https://github.com/syntaxhighlighter)
 
 No development has happened on the parent project for several years and the version located at that repo is currently not building.
 I liked this syntax highlighter, but I don't like builds in my web projects, so this will remove any required build steps and replaces them with one optional minify build step.
 I also converted it in a mono repo which makes it easier to fork this. 
 I also reduced the dependencies because I don't need webpack etc.
 This does mean however that it will only support 'modern' browsers (i.e., anything released in the last 2 years).
-The optional build step is only needed when you want to minify the code, else you can just import ./src/syntax-highlight.js directly.
+The optional build step is only needed when you want to minify the code, else you can just import ./src/syntaxhighlight.js directly.
 This code is compatible with es6 import only unless you use something like webpack to make it compatible with older (non standard) importing schemes.
 I didn't test if this works in node if you want to use it with some kind of server side rendering, but it should work if using the brushes directly. 
 
-# Syntax-Highlight
+# syntaxhighlight
 
 Syntaxhighlighter used to be THE client side highlighter for the web and web-apps! It's been around since 2004 and it's used virtually everywhere to seamlessly highlight code for presentation purposes.
 However, it has had no major development happen to it in the last 6 years and has fallen into disrepair. It no longer builds and any PRs going back to 2013 have not been merged.
@@ -27,7 +27,7 @@ You can also still add brushes manually by using registerBrush.
 # Installation
 Just clone the project to your disk using
 ```shell
-git clone https://github.com/virtualcodewarrior/syntax-highlight.git
+git clone https://github.com/virtualcodewarrior/syntaxhighlight.git
 ```
 This should give you a working version of the highlighter.
 If you want to run tests or build a minified version, you will have to install some dev dependencies using 
@@ -40,13 +40,13 @@ from the project root directory
 
 ## Basic Steps
 
-To get Syntax-Highlight to work on you page, you need to do the following:
+To get syntaxhighlight to work on you page, you need to do the following:
 
 Import into your page and call highlight with optional global configuration.
 If you have any custom brushes, import them with registerBrush. Also add a theme.
 ```html
 <script type="module">
-	import syntaxHighlight, { registerBrush } from '../src/syntax-highlight.js';
+	import syntaxHighlight, { registerBrush } from '../src/syntaxhighlight.js';
     registerBrush(MyBrush, 'my-brush-name');
     syntaxHighlight.highlight({});
 </script>
@@ -62,7 +62,7 @@ Works everywhere, graceful fallback if there are script problems, shows up in al
 
 Major issue with this method is that all right angle brackets **must be HTML escaped**, eg all `<` must be replaced with `&lt;` This will ensure correct rendering.
 
-Syntax-Highlight looks for `<pre />` tags which have a specially formatted `class` attribute. The format of the attribute is the same as the CSS `style` attribute. The only required parameter is `brush`.
+syntaxhighlight looks for `<pre />` tags which have a specially formatted `class` attribute. The format of the attribute is the same as the CSS `style` attribute. The only required parameter is `brush`.
 
 Here’s an example:
 
@@ -74,7 +74,7 @@ function foo()
 </pre>
 
 <script type="module">
-	import syntaxHighlight, { registerBrush } from '../src/syntax-highlight.js';
+	import syntaxHighlight, { registerBrush } from '../src/syntaxhighlight.js';
 	registerBrush(MyBrush, 'my-brush-name');
 	syntaxHighlight.highlight({});
 </script>
@@ -91,10 +91,10 @@ Doesn’t require escaping of the right angle bracket.
 
 :weary: **PROBLEMS** :weary:
 
-1.  No fallback, `<script />` tag is stripped out by most RSS readers, so if you are using Syntax-Highlight on a blog, you are better off with the `<pre />` method.
-2.  If you include a closing script tag, eg `</script>`, even inside CDATA block, most browsers will incorrectly close `<script type="text/Syntax-Highlight">` tag prematurely.
+1.  No fallback, `<script />` tag is stripped out by most RSS readers, so if you are using syntaxhighlight on a blog, you are better off with the `<pre />` method.
+2.  If you include a closing script tag, eg `</script>`, even inside CDATA block, most browsers will incorrectly close `<script type="text/syntaxhighlight">` tag prematurely.
 
-Syntax-Highlight looks for `<script type="Syntax-Highlight" />` which have a specially formatted `class` attribute. The format of the attribute is the same as the CSS `style` attribute. The only required parameter is `brush`.
+syntaxhighlight looks for `<script type="syntaxhighlight" />` which have a specially formatted `class` attribute. The format of the attribute is the same as the CSS `style` attribute. The only required parameter is `brush`.
 
 Here’s an example (**Please note necessary CDATA tag**):
 
@@ -109,7 +109,7 @@ Here’s an example (**Please note necessary CDATA tag**):
 ]]></script>
 
 <script type="module">
-	import syntaxHighlight, { registerBrush } from '../src/syntax-highlight.js';
+	import syntaxHighlight, { registerBrush } from '../src/syntaxhighlight.js';
 	registerBrush(MyBrush, 'my-brush-name');
 	syntaxHighlight.highlight({});
 </script>
@@ -158,7 +158,7 @@ You can configure all highlight instances at once if you pass in properties to h
 
 ```html
 <script type="module">
-	import syntaxHighlight, { registerBrush } from '../src/syntax-highlight.js';
+	import syntaxHighlight, { registerBrush } from '../src/syntaxhighlight.js';
 	registerBrush(MyBrush, 'my-brush-name');
     syntaxHighlight.highlight({
 		className: 'custom-class-name'
@@ -173,9 +173,9 @@ Alternatively you can pass the same options to each element you want to configur
 ```html
 <pre class="brush: php; auto-links: false; first-line: 10; highlight: [2, 4]">
   /**
-    * https://github.com/Syntax-Highlight
+    * https://github.com/syntaxhighlight
     */
-  echo("https://github.com/Syntax-Highlight");
+  echo("https://github.com/syntaxhighlight");
 </pre>
 ```
 # Options
@@ -184,7 +184,7 @@ Alternatively you can pass the same options to each element you want to configur
 * `class-name` (Default `null`) - Allows you to add a custom class (or multiple classes) to every highlighter element that will be created on the page.
 * `first-line` (Default `1`) - Allows you to change the first (starting) line number.
 * `gutter` (Default `true`) - Allows you to turn gutter with line numbers on and off.
-* `highlight`(Default `null`) - Allows you to highlight one or more lines to focus user’s attention. When specifying as a parameter, you have to pass an array looking value, like [1, 2, 3] or just an number for a single line. If you are changing Syntax-Highlight.defaults['highlight'], you can pass a number or an array of numbers.
+* `highlight`(Default `null`) - Allows you to highlight one or more lines to focus user’s attention. When specifying as a parameter, you have to pass an array looking value, like [1, 2, 3] or just an number for a single line. If you are changing syntaxhighlight.defaults['highlight'], you can pass a number or an array of numbers.
 * `html-script`(Default `false`) - Allows you to highlight a mixture of HTML/XML code and a script which is very common in web development. Setting this value to true requires that you have shBrushXml.js loaded and that the brush you are using supports this feature.
 * `smart-tabs` (Default `true`) - Allows you to turn smart tabs feature on and off.
 * `tab-size` (Default `4`) - Allows you to adjust tab size.
@@ -202,12 +202,12 @@ const brush = new PhpBrush();
 const html = brush.getHtml('/* hello foo bar world! /*', {gutter: false});
 ```
 
-# Using Syntax-Highlight
+# Using syntaxhighlight
 
 This only works in the browser.
 
 ```js
-import syntaxHighlight, {registerBrush} from 'src/syntax-highlight.js';
+import syntaxHighlight, {registerBrush} from 'src/syntaxhighlight.js';
 import PhpBrush from 'src/languages/brush-php/brush.js';
 
 registerBrush(PhpBrush);
@@ -216,23 +216,23 @@ syntaxHighlight.highlight({gutter: false});
 
 # Brush API
 
-Every Syntax-Highlight brush extends `BaseBrush` class defined in [brush-base](https://github.com/virtualcodewarrior/Syntax-Highlight/src/languages/brush-base).
+Every syntaxhighlight brush extends `BaseBrush` class defined in [brush-base](https://github.com/virtualcodewarrior/syntaxhighlight/src/languages/brush-base).
 
 * `getKeywords(str)`
 * `forHtmlScript(regexGroup)`
 * `getHtml(code, params = {})`
 
-# Syntax-Highlight API
+# syntaxhighlight API
 
-`Syntax-Highlight` module exposes these methods:
+`syntaxhighlight` module exposes these methods:
 
-* `default` (aka `Syntax-Highlight`)
+* `default` (aka `syntaxHighlight`)
     * `highlight(params = {}, element = null)`
 * `registerBrush(BrushClass)`
 
 #Making a brush
 
-Developing a custom brush allows you to easily extend Syntax-Highlight to support the syntax that isn't [[currently available|Brushes and Themes]]. This process is rather simple and consists of 4 parts:
+Developing a custom brush allows you to easily extend syntaxhighlight to support the syntax that isn't [[currently available|Brushes and Themes]]. This process is rather simple and consists of 4 parts:
 
 ## Step 1
 
@@ -249,7 +249,7 @@ Modify the template to fit your needs.
 
 ```js
 import BrushBase from '../brush-base/brush-base.js';
-import { commonRegExp } from '../../utilities/Syntax-Highlight-regex/Syntax-Highlight-regex.js';
+import { commonRegExp } from '../../utilities/syntaxhighlight-regex/syntaxhighlight-regex.js';
 
 // you can have as many custom, space separated sets as you want
 const functions = 'func1 func2';

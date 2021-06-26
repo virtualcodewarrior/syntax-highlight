@@ -1,5 +1,5 @@
 # syntax-highlight web component
-This is a web component that implements syntax-highlight.
+This is a web component that implements syntaxhighlight.
 This has some advantages over using the global call to syntax highlight. 
 For instance all css is contained within the web component so it should not affect
 the surrounding page design. It also uses a web worker to do the actual 
@@ -30,7 +30,7 @@ If you want to use a theme other than the default, just specify this as an attri
 The web component also allows you to import a code file directly into the web component without 
 having to include it inside the webcomponent by specifying it in the `src` attribute of the web component
 ```html
-<syntax-highlight language="JavaScript" src="../src/syntax-highlight.js">
+<syntax-highlight language="JavaScript" src="../src/syntaxhighlight.js">
 </syntax-highlight>
 ```
 
@@ -47,7 +47,7 @@ having to include it inside the webcomponent by specifying it in the `src` attri
 
 You can assign these properties either directly on a retrieved element instance (note that you have to use camelCase in that case) :
 ```html
-<syntax-highlight language="JavaScript" src="../src/syntax-highlight.js">
+<syntax-highlight language="JavaScript" src="../src/syntaxhighlight.js">
 </syntax-highlight>
 <script>
     document.getElementsByTagName('syntax-highlight').autoLinks = false;
@@ -55,7 +55,7 @@ You can assign these properties either directly on a retrieved element instance 
 ```
 Or through an attribute on the element
 ```html
-<syntax-highlight language="JavaScript" src="../src/syntax-highlight.js" auto-links="false" tab-size="8" higlight="[12, 14]">
+<syntax-highlight language="JavaScript" src="../src/syntaxhighlight.js" auto-links="false" tab-size="8" higlight="[12, 14]">
 </syntax-highlight>
 ```
 For more examples see `examples/webcomponent-example.html`
