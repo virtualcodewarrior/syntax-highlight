@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Web component syntax highlighter</title>
+	<script type="module" src="../src/webcomponent/syntax-highlighter.js"></script>
+	<style>
+		syntax-highlighter {
+			display: block;
+			margin: 5px 0;
+		}
+	</style>
+</head>
+<body>
+<!--<syntax-highlighter language="xml">
+	<meta charset="UTF-8">
+	<title>Web component syntax highlighter</title>
+</syntax-highlighter>
+<syntax-highlighter language="javascript">
+	for (const item of items) {
+		item.x += item.y;
+	}
+</syntax-highlighter>
+<syntax-highlighter language="cpp">
+	for (int index = 0; index < length; index++) {
+		item.x += item.y;
+	}
+</syntax-highlighter>-->
+<syntax-highlighter language="JavaScript" src="../src/core.js">
+</syntax-highlighter>
+</body>
+</html>

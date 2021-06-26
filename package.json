@@ -40,6 +40,8 @@
     "karma-spec-reporter": "0.0.32",
     "walk": "^2.3.14"
   },
-  "dependencies": {},
+  "dependencies": {
+    "web-component-base-class": "^1.0.1"
+  },
   "license": "MIT"
 }

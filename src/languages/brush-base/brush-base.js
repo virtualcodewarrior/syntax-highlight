@@ -10,11 +10,7 @@ export default class BrushBase {
    */
 	// eslint-disable-next-line class-methods-use-this
 	getKeywords(str) {
-		const results = str
-			.replace(/^\s+|\s+$/g, '')
-			.replace(/\s+/g, '|')
-      ;
-
+		const results = str.trim().replace(/\s+/g, '|');
 		return `\\b(?:${results})\\b`;
 	}
 
