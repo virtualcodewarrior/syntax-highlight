@@ -8,7 +8,7 @@ describe('integration/compat', () => {
 			div.innerHTML = await result.text();
 			document.body.appendChild(div);
 
-			const { default: SyntaxHighlighter, registerBrush } = await import('/base/src/syntax-highlight.js');
+			const { default: SyntaxHighlighter, registerBrush } = await import('/base/src/syntaxhighlight.js');
 			registerBrush((await import('/base/test/fixtures/test_brush_v4.js')).default, 'test_brush_v4');
 			registerBrush((await import('/base/test/fixtures/html_test_brush_v4.js')).default, 'html_test_brush_v4');
 			registerBrush((await import('/base/test/fixtures/test_brush_v4_es6.js')).default, 'test_brush_v4_es6');

@@ -7,11 +7,11 @@ This folder contains the themes for SyntaxHighlight
 Just include a link to the theme you like to use in the top of your page:
 
 ```html
-<link rel="stylesheet" type="text/css" href="path-to-syntax-highlight/src/themes/theme-default/theme.css">
+<link rel="stylesheet" type="text/css" href="path-to-syntaxhighlight/src/themes/theme-default/theme.css">
 ```
 For the minified version if you build it or if you installed from npm
 ```html
-<link rel="stylesheet" type="text/css" href="path-to-syntax-highlight/dist/themes/theme-default/theme.css">
+<link rel="stylesheet" type="text/css" href="path-to-syntaxhighlight/dist/themes/theme-default/theme.css">
 ```
 
 ## List of themes

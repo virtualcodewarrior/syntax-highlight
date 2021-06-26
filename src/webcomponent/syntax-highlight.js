@@ -1,4 +1,4 @@
-// https://github.com/virtualcodewarrior/syntax-highlight
+// https://github.com/virtualcodewarrior/syntaxhighlight
 import { webComponentBaseClass } from '../../node_modules/web-component-base-class/src/webComponentBaseClass.js';
 
 const path = document.querySelector('script[src$="/syntax-highlight.js"]')?.src;
