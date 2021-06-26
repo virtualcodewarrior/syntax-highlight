@@ -38,8 +38,21 @@ from the project root directory
 
 # Usage
 
-## Webcomponent
-Documentation about using the highlighter as a web component can be found here:  
+## WebComponent
+The WebComponent makes use easy, just wrap the code in the web component 
+```html
+<syntax-highlight language="javascript">
+	for (const item of items) {
+	item.x += item.y;
+	}
+</syntax-highlight>
+```
+Or to import an external source file, just specify its source url
+```html
+<syntax-highlight language="JavaScript" src="../src/syntaxhighlight.js">
+</syntax-highlight>
+```
+Further documentation about using the highlighter as a web component can be found here:  
 - [syntax-highlight webcomponent](./webcomponent/README.md).
 
 ## Legacy method whole page
