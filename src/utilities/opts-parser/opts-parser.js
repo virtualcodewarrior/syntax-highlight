@@ -1,4 +1,4 @@
-import { xRegExp } from '../syntaxhighlighter-regex/syntaxhighlighter-regex.js';
+import { xRegExp } from '../syntaxhighlight-regex/syntaxhighlight-regex.js';
 
 const BOOLEANS = { true: true, false: false };
 

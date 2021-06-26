@@ -1,7 +1,7 @@
 import optsParser from './utilities/opts-parser/opts-parser.js';
-import { Match, applyRegexList } from './utilities/syntaxhighlighter-match/syntaxhighlighter-match.js';
-import Renderer from './utilities/syntaxhighlighter-html-renderer/syntaxhighlighter-html-renderer.js';
-import { commonRegExp } from './utilities/syntaxhighlighter-regex/syntaxhighlighter-regex.js';
+import { Match, applyRegexList } from './utilities/syntaxhighlight-match/syntaxhighlight-match.js';
+import Renderer from './utilities/syntaxhighlight-html-renderer/syntaxhighlight-html-renderer.js';
+import { commonRegExp } from './utilities/syntaxhighlight-regex/syntaxhighlight-regex.js';
 import utils from './utils.js';
 import transformers from './transformers/index.js';
 import dom from './dom.js';
@@ -56,7 +56,7 @@ const sh = {
 		let elements = element ? [element] : utils.toArray(document.getElementsByTagName(sh.config.tagName));
 		const result = [];
 
-		// support for <SCRIPT TYPE="syntaxhighlighter" /> feature
+		// support for <SCRIPT TYPE="syntaxhighlight" /> feature
 		elements = elements.concat(dom.getSyntaxHighlighterScriptTags());
 
 		if (elements.length === 0) {

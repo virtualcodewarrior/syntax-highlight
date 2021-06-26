@@ -4,7 +4,7 @@
 
 @import "../theme-base/theme-base.css";
 
-.syntaxhighlighter {
+.syntaxhighlight {
   --background: #fff;
 
   --line_highlighted_background: #c3defe;
@@ -34,21 +34,21 @@
   --code_color3: red;
 }
 
-.syntaxhighlighter .keyword {
+.syntaxhighlight .keyword {
   font-weight: bold !important;
 }
 
-.syntaxhighlighter .xml .keyword {
+.syntaxhighlight .xml .keyword {
   color: #3f7f7f !important;
   font-weight: normal !important;
 }
 
-.syntaxhighlighter .xml .color1,
-.syntaxhighlighter .xml .color1 a {
+.syntaxhighlight .xml .color1,
+.syntaxhighlight .xml .color1 a {
   color: #7f007f !important;
 }
 
-.syntaxhighlighter .xml .string {
+.syntaxhighlight .xml .string {
   font-style: italic !important;
   color: #2a00ff !important;
 }

@@ -31,7 +31,7 @@
 - hello
 -</pre>
 -<h1>SyntaxHighlighter 2.0</h1>
--<p><a href="http://code.google.com/p/syntaxhighlighter/">http://code.google.com/p/syntaxhighlighter/</a></p>
+-<p><a href="http://code.google.com/p/syntaxhighlight/">http://code.google.com/p/syntaxhighlight/</a></p>
 --->
 +<script type="text/javascript" src="Scripts/shCore.js"></script>
 +<? foreach (\$brushes as \$brush => \$label) : ?>

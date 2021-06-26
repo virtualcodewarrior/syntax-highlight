@@ -1,5 +1,5 @@
-import { applyRegexList } from '../syntaxhighlighter-match/syntaxhighlighter-match.js';
-import Renderer from './syntaxhighlighter-html-renderer.js';
+import { applyRegexList } from '../syntaxhighlight-match/syntaxhighlight-match.js';
+import Renderer from './syntaxhighlight-html-renderer.js';
 
 const REGEX_LIST = [
 	{ regex: /hello|world/g, css: 'greeting' },
@@ -14,12 +14,12 @@ function getHtml(code, opts = {}) {
 	return divElem.firstChild;
 }
 
-describe('syntaxhighlighter-html-renderer', () => {
+describe('syntaxhighlight-html-renderer', () => {
 	let element = null;
 	let CODE;
 
 	beforeAll(async() => {
-		CODE = await (await fetch('/base/src/utilities/syntaxhighlighter-html-renderer/fixture.js')).text();
+		CODE = await (await fetch('/base/src/utilities/syntaxhighlight-html-renderer/fixture.js')).text();
 	});
 
 	function itHasElements({ gutter, lineCount, firstLine = 1, highlight = [] } = {}) {

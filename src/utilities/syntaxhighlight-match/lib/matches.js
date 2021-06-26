@@ -1,5 +1,5 @@
 import { Match } from './match.js';
-import { xRegExp } from '../../syntaxhighlighter-regex/syntaxhighlighter-regex.js';
+import { xRegExp } from '../../syntaxhighlight-regex/syntaxhighlight-regex.js';
 
 /**
  * Executes given regular expression on provided code and returns all matches that are found.
@@ -51,7 +51,7 @@ export function sort(matches) {
 		} else if (m1.length > m2.length) {
 			return 1;
 		}
-		
+
 
 		return 0;
 	}

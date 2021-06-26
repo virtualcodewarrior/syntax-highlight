@@ -1,6 +1,6 @@
 @import "../theme-base/theme-base.css";
 
-.syntaxhighlighter {
+.syntaxhighlight {
   --background                   : #0a2b1d;
 
   --line_highlighted_background  : #233729;
@@ -30,5 +30,5 @@
   --code_color3                  : #edef7d;
 }
 
-.syntaxhighlighter .comments { font-style: italic !important; }
-.syntaxhighlighter .keyword { font-weight: bold !important; }
+.syntaxhighlight .comments { font-style: italic !important; }
+.syntaxhighlight .keyword { font-weight: bold !important; }

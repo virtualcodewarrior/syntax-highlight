@@ -1,6 +1,6 @@
-import { commonRegExp, xRegExp } from './syntaxhighlighter-regex.js';
+import { commonRegExp, xRegExp } from './syntaxhighlight-regex.js';
 
-describe('syntaxhighlighter-regex', () => {
+describe('syntaxhighlight-regex', () => {
 	describe('commonRegExp', () => {
 		it('is ok', () => expect(commonRegExp).toBeTruthy());
 		it('has multiLineCComments', () => expect(commonRegExp.multiLineCComments).not.toBeUndefined());

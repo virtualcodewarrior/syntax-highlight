@@ -1,4 +1,4 @@
-name: syntaxhighlighter-test-and-build
+name: syntaxhighlight-test-and-build
 
 on: [push]
 

@@ -1,27 +1,27 @@
-.syntaxhighlighter,
-.syntaxhighlighter .bold,
-.syntaxhighlighter .italic,
-.syntaxhighlighter .line .number,
-.syntaxhighlighter.nogutter .line .number,
-.syntaxhighlighter .line .content,
-.syntaxhighlighter .line .content code,
-.syntaxhighlighter .line .content .block,
-.syntaxhighlighter .line .content .spaces,
-.syntaxhighlighter.nogutter .line .content,
-.syntaxhighlighter .bar,
-.syntaxhighlighter.collapsed .bar,
-.syntaxhighlighter.nogutter .bar,
-.syntaxhighlighter .ruler,
-.syntaxhighlighter.collapsed .lines,
-.syntaxhighlighter.collapsed .ruler,
-.syntaxhighlighter.printing,
-.syntaxhighlighter.printing .tools,
-.syntaxhighlighter.printing li,
-.syntaxhighlighter .toolbar,
-.syntaxhighlighter.nogutter .toolbar,
-.syntaxhighlighter.collapsed .toolbar,
-.syntaxhighlighter .toolbar a,
-.syntaxhighlighter .toolbar a:hover
+.syntaxhighlight,
+.syntaxhighlight .bold,
+.syntaxhighlight .italic,
+.syntaxhighlight .line .number,
+.syntaxhighlight.nogutter .line .number,
+.syntaxhighlight .line .content,
+.syntaxhighlight .line .content code,
+.syntaxhighlight .line .content .block,
+.syntaxhighlight .line .content .spaces,
+.syntaxhighlight.nogutter .line .content,
+.syntaxhighlight .bar,
+.syntaxhighlight.collapsed .bar,
+.syntaxhighlight.nogutter .bar,
+.syntaxhighlight .ruler,
+.syntaxhighlight.collapsed .lines,
+.syntaxhighlight.collapsed .ruler,
+.syntaxhighlight.printing,
+.syntaxhighlight.printing .tools,
+.syntaxhighlight.printing li,
+.syntaxhighlight .toolbar,
+.syntaxhighlight.nogutter .toolbar,
+.syntaxhighlight.collapsed .toolbar,
+.syntaxhighlight .toolbar a,
+.syntaxhighlight .toolbar a:hover
 {
   margin: 0;
   padding: 0;
@@ -45,7 +45,7 @@
   font-size: 100%;
 }
  
-.syntaxhighlighter
+.syntaxhighlight
 {
   font-size: 16px;
   width: 99%;
@@ -54,15 +54,15 @@
   padding-top: 1px; /* adds a little border on top when controls are hidden */
 }
  
-.syntaxhighlighter .bold {
+.syntaxhighlight .bold {
   font-weight: bold;
 }
  
-.syntaxhighlighter .italic {
+.syntaxhighlight .italic {
   font-style: italic;
 }
  
-.syntaxhighlighter .line .number
+.syntaxhighlight .line .number
 {
   float: left;
   width: 45px;
@@ -72,49 +72,49 @@
 }
  
 /* Disable numbers when no gutter option is set */
-.syntaxhighlighter.nogutter .line .number
+.syntaxhighlight.nogutter .line .number
 {
   display: none;
 }
  
-.syntaxhighlighter .line .content
+.syntaxhighlight .line .content
 {
   margin-left: 50px;
   padding-left: 4px;
   display: block;
 }
  
-.syntaxhighlighter .line .content .block
+.syntaxhighlight .line .content .block
 {
   display: block;
   padding-left: 18px;
   text-indent: -18px;
 }
  
-.syntaxhighlighter .line .content .spaces
+.syntaxhighlight .line .content .spaces
 {
   display: none;
 }
  
 /* Disable border and margin on the lines when no gutter option is set */
-.syntaxhighlighter.nogutter .line .content
+.syntaxhighlight.nogutter .line .content
 {
   margin-left: 0;
   border-left: none;
 }
  
-.syntaxhighlighter .bar
+.syntaxhighlight .bar
 {
   padding-left: 50px;
 }
  
-.syntaxhighlighter.collapsed .bar,
-.syntaxhighlighter.nogutter .bar
+.syntaxhighlight.collapsed .bar,
+.syntaxhighlight.nogutter .bar
 {
   padding-left: 0px;
 }
  
-.syntaxhighlighter .ruler
+.syntaxhighlight .ruler
 {
   padding-left: 4px;
   overflow: hidden;
@@ -123,50 +123,50 @@
  
 /* Adjust some properties when collapsed */
  
-.syntaxhighlighter.collapsed .lines,
-.syntaxhighlighter.collapsed .ruler
+.syntaxhighlight.collapsed .lines,
+.syntaxhighlight.collapsed .ruler
 {
   display: none;
 }
  
 /* Additional modifications when in print-view */
  
-.syntaxhighlighter.printing
+.syntaxhighlight.printing
 {
   border: none !important;
 }
  
-.syntaxhighlighter.printing .bar
+.syntaxhighlight.printing .bar
 {
   display: none !important;
 }
  
 /* Styles for the tools */
  
-.syntaxhighlighter .toolbar
+.syntaxhighlight .toolbar
 {
   font-size: 80%;
   font-family: Geneva, Verdana, Arial, Helvetica, sans-serif;
   padding: 1px 5px 5px 5px;
 }
  
-.syntaxhighlighter.nogutter .toolbar
+.syntaxhighlight.nogutter .toolbar
 {
   border-left: 0;
 }
  
-.syntaxhighlighter.collapsed .toolbar
+.syntaxhighlight.collapsed .toolbar
 {
   border-bottom: 0;
 }
  
-.syntaxhighlighter .toolbar a
+.syntaxhighlight .toolbar a
 {
   text-decoration: none;
   margin-right: 10px;
 }
  
-.syntaxhighlighter .toolbar a:hover
+.syntaxhighlight .toolbar a:hover
 {
   text-decoration: underline;
   margin-right: 10px;

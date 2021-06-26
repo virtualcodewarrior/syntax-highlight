@@ -1,5 +1,5 @@
 import BrushBase from '../brush-base/brush-base.js';
-import { commonRegExp as regexLib } from '../../utilities/syntaxhighlighter-regex/syntaxhighlighter-regex.js';
+import { commonRegExp as regexLib } from '../../utilities/syntaxhighlight-regex/syntaxhighlight-regex.js';
 
 function Brush() {
 	const funcs = 'abs avg case cast coalesce convert count current_timestamp ' +

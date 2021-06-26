@@ -1,4 +1,4 @@
-import SyntaxHighlighter, { registerBrush } from '../src/syntaxhighlighter.js';
+import SyntaxHighlighter, { registerBrush } from '../src/syntax-highlight.js';
 import TestBrushV4 from './fixtures/test_brush_v4.js';
 import HTMLTestBrushV4 from './fixtures/html_test_brush_v4.js';
 
@@ -29,7 +29,7 @@ describe('integration', () => {
 		registerBrush(TestBrushV4, 'test_brush_v4');
 		registerBrush(HTMLTestBrushV4, 'html_test_brush_v4');
 		await SyntaxHighlighter.highlight();
-		highlighter = document.querySelector('.syntaxhighlighter');
+		highlighter = document.querySelector('.syntaxhighlight');
 	}
 
 	function itHasCommonElements() {
@@ -66,13 +66,13 @@ describe('integration', () => {
 				itHasCommonElements();
 			});
 
-			describe(`using '<script type="syntaxhighlighter" class="brush: ${brushName}">'`, () => {
-				beforeEach(async() => await createHighlighter(`<script type="syntaxhighlighter" class="brush: ${brushName}">hello world</script>`));
+			describe(`using '<script type="syntaxhighlight" class="brush: ${brushName}">'`, () => {
+				beforeEach(async() => await createHighlighter(`<script type="syntaxhighlight" class="brush: ${brushName}">hello world</script>`));
 				itHasCommonElements();
 			});
 
-			describe(`using '<script type="text/syntaxhighlighter" class="brush: ${brushName}">'`, () => {
-				beforeEach(async() => await createHighlighter(`<script type="text/syntaxhighlighter" class="brush: ${brushName}">hello world</script>`));
+			describe(`using '<script type="text/syntaxhighlight" class="brush: ${brushName}">'`, () => {
+				beforeEach(async() => await createHighlighter(`<script type="text/syntaxhighlight" class="brush: ${brushName}">hello world</script>`));
 				itHasCommonElements();
 			});
 		});

@@ -8,7 +8,7 @@ describe('integration/no-compat', () => {
 			div.innerHTML = await result.text();
 			document.body.appendChild(div);
 
-			const { default: SyntaxHighlighter, registerBrush } = await import('/base/src/syntaxhighlighter.js');
+			const { default: SyntaxHighlighter, registerBrush } = await import('/base/src/syntax-highlight.js');
 			registerBrush((await import('/base/test/fixtures/test_brush_v4.js')).default, 'test_brush_v4');
 			registerBrush((await import('/base/test/fixtures/html_test_brush_v4.js')).default, 'html_test_brush_v4');
 			registerBrush((await import('/base/test/fixtures/test_brush_v4_es6.js')).default, 'test_brush_v4_es6');
@@ -17,7 +17,7 @@ describe('integration/no-compat', () => {
 			const wait = async() => {
 				await new Promise((resolve) => {
 					const doTimeoutFunction = () => {
-						if (document.querySelector('.syntaxhighlighter')) {
+						if (document.querySelector('.syntaxhighlight')) {
 							resolve();
 						} else {
 							setTimeout(doTimeoutFunction, 900);
@@ -34,8 +34,8 @@ describe('integration/no-compat', () => {
 			document.body.removeChild(div);
 		});
 
-		it('highlights v4 brush', () => expect(document.querySelector('.syntaxhighlighter.test_brush_v4')).toBeTruthy());
-		it('highlights v4 ES6 brush', () => expect(document.querySelector('.syntaxhighlighter.test_brush_v4_es6')).toBeTruthy());
+		it('highlights v4 brush', () => expect(document.querySelector('.syntaxhighlight.test_brush_v4')).toBeTruthy());
+		it('highlights v4 ES6 brush', () => expect(document.querySelector('.syntaxhighlight.test_brush_v4_es6')).toBeTruthy());
 		it('does not expose window.SyntaxHighlighter', () => expect(window.SyntaxHighlighter).toBeUndefined());
 	});
 
@@ -48,7 +48,7 @@ describe('integration/no-compat', () => {
 				div.innerHTML = await result.text();
 				document.body.appendChild(div);
 
-				const { default: SyntaxHighlighter, registerBrush } = await import('/base/src/syntaxhighlighter.js');
+				const { default: SyntaxHighlighter, registerBrush } = await import('/base/src/syntax-highlight.js');
 				registerBrush((await import('/base/test/fixtures/test_brush_v4.js')).default, 'test_brush_v4');
 				registerBrush((await import('/base/test/fixtures/html_test_brush_v4.js')).default, 'html_test_brush_v4');
 				registerBrush((await import('/base/test/fixtures/test_brush_v4_es6.js')).default, 'test_brush_v4_es6');
@@ -57,7 +57,7 @@ describe('integration/no-compat', () => {
 				const wait = async() => {
 					await new Promise((resolve) => {
 						const doTimeoutFunction = () => {
-							if (document.querySelector('.syntaxhighlighter')) {
+							if (document.querySelector('.syntaxhighlight')) {
 								resolve();
 							} else {
 								setTimeout(doTimeoutFunction, 900);
@@ -75,11 +75,11 @@ describe('integration/no-compat', () => {
 				document.body.removeChild(div);
 			});
 
-			it('highlights v4 brush config', () => expect(document.querySelector('.syntaxhighlighter.test_brush_v4')).toBeTruthy());
-			it('highlights v4 ES6 brush config', () => expect(document.querySelector('.syntaxhighlighter.test_brush_v4_es6')).toBeTruthy());
+			it('highlights v4 brush config', () => expect(document.querySelector('.syntaxhighlight.test_brush_v4')).toBeTruthy());
+			it('highlights v4 ES6 brush config', () => expect(document.querySelector('.syntaxhighlight.test_brush_v4_es6')).toBeTruthy());
 			it('does not expose window.SyntaxHighlighter config', () => expect(window.SyntaxHighlighter).toBeUndefined());
 			it('applies custom class name from global config variable to all units', () =>
-				expect(document.querySelectorAll('.foo-bar.syntaxhighlighter').length).toEqual(2));
+				expect(document.querySelectorAll('.foo-bar.syntaxhighlight').length).toEqual(2));
 		}
 
 		describe('dash-case arguments', () => test({ 'class-name': 'foo-bar' }));

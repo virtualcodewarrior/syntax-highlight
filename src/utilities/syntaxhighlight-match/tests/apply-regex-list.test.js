@@ -1,4 +1,4 @@
-import { applyRegexList } from '../syntaxhighlighter-match.js';
+import { applyRegexList } from '../syntaxhighlight-match.js';
 
 const REGEX_LIST = [
 	{ regex: /hello|world/g, css: 'greeting' },

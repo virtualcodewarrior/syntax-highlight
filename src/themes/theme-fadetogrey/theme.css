@@ -3,7 +3,7 @@
 
 @import "../theme-base/theme-base.css";
 
-.syntaxhighlighter {
+.syntaxhighlight {
   --background                   : #121212;
 
 --line_highlighted_background  : #2C2C29;
@@ -33,5 +33,5 @@
 --code_color3                  : #96daff;
 }
 
-.syntaxhighlighter .functions { font-weight: bold !important; }
+.syntaxhighlight .functions { font-weight: bold !important; }
 

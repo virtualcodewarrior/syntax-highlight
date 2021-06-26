@@ -46,7 +46,7 @@ $caption_color                : $code_plain !default;
   @include round_corners_custom($radius, $radius, $radius, $radius);
 }
 
-.syntaxhighlighter {
+.syntaxhighlight {
   a,
   div,
   code,
@@ -92,7 +92,7 @@ $caption_color                : $code_plain !default;
   }
 }
 
-.syntaxhighlighter {
+.syntaxhighlight {
   width: 100% !important;
   margin: 1em 0 1em 0 !important;
 
@@ -255,7 +255,7 @@ $caption_color                : $code_plain !default;
 }
 
 // Interface elements.
-.syntaxhighlighter {
+.syntaxhighlight {
   background-color: $background !important;
 
   // Highlighed line number

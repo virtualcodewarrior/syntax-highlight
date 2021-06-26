@@ -1,4 +1,4 @@
-import SyntaxHighlighter, { registerBrush } from '../../src/syntaxhighlighter.js';
+import SyntaxHighlighter, { registerBrush } from '../../src/syntax-highlight.js';
 import Brush from '../fixtures/test_brush_v4.js';
 
 describe('integration/commonjs', () => {
@@ -17,7 +17,7 @@ describe('integration/commonjs', () => {
 			const wait = async() => {
 				await new Promise((resolve) => {
 					const doTimeoutFunction = () => {
-						if (document.querySelectorAll('.syntaxhighlighter').length) {
+						if (document.querySelectorAll('.syntaxhighlight').length) {
 							resolve();
 						} else {
 							setTimeout(doTimeoutFunction, 900);
@@ -34,8 +34,8 @@ describe('integration/commonjs', () => {
 			document.body.removeChild(div);
 		});
 
-		it('has applied the brush', () => expect(document.querySelector('.syntaxhighlighter').innerHTML).toContain('<code class="test_brush_v4 plain">first</code>'));
-		it('does not render gutter', () => expect(document.querySelectorAll('.syntaxhighlighter td.gutter').length).toEqual(0));
+		it('has applied the brush', () => expect(document.querySelector('.syntaxhighlight').innerHTML).toContain('<code class="test_brush_v4 plain">first</code>'));
+		it('does not render gutter', () => expect(document.querySelectorAll('.syntaxhighlight td.gutter').length).toEqual(0));
 	});
 
 	describe('second render pass', () => {
@@ -52,7 +52,7 @@ describe('integration/commonjs', () => {
 			const wait = async() => {
 				await new Promise((resolve) => {
 					const doTimeoutFunction = () => {
-						if (document.querySelectorAll('.syntaxhighlighter').length) {
+						if (document.querySelectorAll('.syntaxhighlight').length) {
 							resolve();
 						} else {
 							setTimeout(doTimeoutFunction, 900);
@@ -68,6 +68,6 @@ describe('integration/commonjs', () => {
 		afterAll(() => {
 			document.body.removeChild(div);
 		});
-		it('has applied the brush second', () => expect(document.querySelectorAll('.syntaxhighlighter')[0].innerHTML).toContain('<code class="test_brush_v4 plain">second</code>'));
+		it('has applied the brush second', () => expect(document.querySelectorAll('.syntaxhighlight')[0].innerHTML).toContain('<code class="test_brush_v4 plain">second</code>'));
 	});
 });

@@ -1,5 +1,5 @@
 import BrushBase from '../brush-base/brush-base.js';
-import { commonRegExp } from '../../utilities/syntaxhighlighter-regex/syntaxhighlighter-regex.js';
+import { commonRegExp } from '../../utilities/syntaxhighlight-regex/syntaxhighlight-regex.js';
 
 const functions = 'abs acos acosh addcslashes addslashes ' +
   'array_change_key_case array_chunk array_combine array_count_values array_diff ' +

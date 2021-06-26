@@ -3,30 +3,79 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Web component syntax highlighter</title>
-	<script type="module" src="../src/webcomponent/syntax-highlighter.js"></script>
+	<script type="module" src="../src/webcomponent/syntax-highlight.js"></script>
 	<style>
-		syntax-highlighter {
+		syntax-highlight {
 			display: block;
 			margin: 5px 0;
 		}
 	</style>
 </head>
 <body>
-<!--<syntax-highlighter language="xml">
+<div style="display: flex">
+	<div style="flex: 0 0 600px">
+		<h2>Test themes</h2>
+		<button onClick="document.getElementById('theme-change').theme = 'default'">default</button>
+		<button onClick="document.getElementById('theme-change').theme = 'django'">django</button>
+		<button onClick="document.getElementById('theme-change').theme = 'eclipse'">eclipse</button>
+		<button onClick="document.getElementById('theme-change').theme = 'emacs'">emacs</button>
+		<button onClick="document.getElementById('theme-change').theme = 'fadetogrey'">fadetogrey</button>
+		<button onClick="document.getElementById('theme-change').theme = 'mdultra'">mdultra</button>
+		<button onClick="document.getElementById('theme-change').theme = 'midnight'">midnight</button>
+		<button onClick="document.getElementById('theme-change').theme = 'rdark'">rdark</button>
+		<button onClick="document.getElementById('theme-change').theme = 'swift'">swift</button>
+		<h2>Test options</h2>
+		<div style="display: flex; flex-direction: column">
+			<div><input id="auto-links" type="checkbox" checked
+						onChange="document.getElementById('theme-change').autoLinks = this.checked">
+				<label for="auto-links">auto-links</label></div>
+			<div><input id="first-line" type="number" value="1" min="1"
+						onChange="document.getElementById('theme-change').firstLine = this.value">
+				<label for="first-line">first-line</label></div>
+			<div><input id="gutter" type="checkbox" checked
+						onChange="document.getElementById('theme-change').gutter = this.checked">
+				<label for="gutter">gutter</label></div>
+			<div><input id="highlight" type="text" placeholder="for example: 2,4"
+						onChange="document.getElementById('theme-change').highlight = this.value.split(',')">
+				<label for="highlight">highlight</label></div>
+			<div><input id="html-script" type="checkbox"
+						onChange="document.getElementById('theme-change').htmlScript = this.checked">
+				<label for="html-script">html-script</label></div>
+			<div><input id="smart-tabs" type="checkbox" checked
+						onChange="document.getElementById('theme-change').smartTabs = this.checked">
+				<label for="smart-tabs">smart-tabs</label></div>
+			<div><input id="tab-size" type="number" value="4" min="1"
+						onChange="document.getElementById('theme-change').tabSize = this.value">
+				<label for="tab-size">tab-size</label>
+			</div>
+		</div>
+	</div>
+	<div>
+		<syntax-highlight id="theme-change" height="300px" language="JavaScript"
+						  src="../src/webcomponent/syntax-highlight.js">
+		</syntax-highlight>
+	</div>
+</div>
+
+HTML
+<syntax-highlight language="xml">
 	<meta charset="UTF-8">
 	<title>Web component syntax highlighter</title>
-</syntax-highlighter>
-<syntax-highlighter language="javascript">
+</syntax-highlight>
+Javascript with Django theme
+<syntax-highlight language="javascript" theme="django">
 	for (const item of items) {
-		item.x += item.y;
+	item.x += item.y;
 	}
-</syntax-highlighter>
-<syntax-highlighter language="cpp">
+</syntax-highlight>
+C++
+<syntax-highlight language="cpp">
 	for (int index = 0; index < length; index++) {
-		item.x += item.y;
+	item.x += item.y;
 	}
-</syntax-highlighter>-->
-<syntax-highlighter language="JavaScript" src="../src/core.js">
-</syntax-highlighter>
+</syntax-highlight>
+Using an imported source file and highlight that
+<syntax-highlight height="300px" language="JavaScript" src="../src/syntax-highlight.js">
+</syntax-highlight>
 </body>
 </html>
