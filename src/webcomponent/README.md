@@ -44,6 +44,7 @@ having to include it inside the webcomponent by specifying it in the `src` attri
 | html-script| false   | Enables mixing HTML with code if you want to highlight HTML that contains scripts |
 | smart-tabs | true    | Enables smart tabs                          |
 | tab-size   | 4       | The number of spaces for a tab character    |
+| no-copy-button | false | Hides the copy button if set              |
 
 You can assign these properties either directly on a retrieved element instance (note that you have to use camelCase in that case) :
 ```html
