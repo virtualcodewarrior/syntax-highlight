@@ -29,7 +29,7 @@ walker.on('file', (p_Root, p_Stat, p_Next) => {
 				let fileContent = fs.readFileSync(path.resolve(p_Root, p_Stat.name), { encoding: 'utf8' });
 				fileContent = fileContent.replace(/\/web-component-base-class\/src\//g, '/web-component-base-class/dist/');
 				if (npmBuild) {
-					fileContent = fileContent.replace(/\/third_party\//g, '/../../');
+					fileContent = fileContent.replace(/\/third_party\//g, '/../../').replace(/\.\.\/\.\.\/node_modules/g, '../../..');
 				}
 				let info = null;
 				try {
@@ -51,7 +51,7 @@ walker.on('file', (p_Root, p_Stat, p_Next) => {
 				}
 			} else if (/\.html$/.test(p_Stat.name)) {
 				if (npmBuild) {
-					fs.outputFileSync(path.resolve(target, p_Stat.name), fs.readFileSync(path.resolve(p_Root, p_Stat.name), 'utf8').replace(/\/third_party\//g, '/../../'));
+					fs.outputFileSync(path.resolve(target, p_Stat.name), fs.readFileSync(path.resolve(p_Root, p_Stat.name), 'utf8').replace(/\/third_party\//g, '/../../').replace(/\.\.\/\.\.\/node_modules/g, '../../..'));
 				} else {
 					fs.copySync(path.resolve(p_Root, p_Stat.name), path.resolve(target, p_Stat.name));
 				}
@@ -77,7 +77,7 @@ if (npmBuild) {
 		if (!/third_party/.test(p_Root)) {
 			if (!exclude.find((p_RegExp) => p_RegExp.test(p_Stat.name))) {
 				if (/\.jsm?$/.test(p_Stat.name) || /\.html$/.test(p_Stat.name)) {
-					fs.outputFileSync(path.resolve(target, p_Stat.name), fs.readFileSync(path.resolve(p_Root, p_Stat.name), 'utf8').replace(/\/third_party\//g, '/../../'));
+					fs.outputFileSync(path.resolve(target, p_Stat.name), fs.readFileSync(path.resolve(p_Root, p_Stat.name), 'utf8').replace(/\/third_party\//g, '/../../').replace(/\.\.\/\.\.\/node_modules/g, '../../..'));
 				} else {
 					fs.copySync(path.resolve(p_Root, p_Stat.name), path.resolve(target, p_Stat.name));
 				}
