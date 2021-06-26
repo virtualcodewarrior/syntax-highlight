@@ -161,6 +161,42 @@ const sh = {
 			}
 		}
 	},
+
+	async highlightLanguage(code, language, globalParams) {
+		let result = code;
+		globalParams = globalParams ? dasherizeObject(globalParams) : globalParams;
+		let renderer;
+
+		let params = optsParser.defaults({ 'class-name': language || 'plain', brush: language || 'plain' }, globalParams);
+		let brushName = params.brush;
+
+		if (brushName) {
+			let Brush = await findBrush(brushName);
+
+			if (Brush) {
+				// local params take precedence over defaults
+				params = optsParser.defaults(params || {}, defaults);
+				params = optsParser.defaults(params, config);
+
+				// Instantiate a brush
+				if (params['html-script'] === true || defaults['html-script'] === true) {
+					Brush = new HtmlScript(await findBrush('xml'), Brush);
+					brushName = 'htmlscript';
+				} else {
+					Brush = new Brush();
+				}
+
+				params['brush'] = brushName;
+
+				code = transformers(code, params);
+				const matches = applyRegexList(code, Brush.regexList, params);
+				renderer = new Renderer(code, matches, params);
+
+				result = renderer.getHtml();
+			}
+		}
+		return result;
+	},
 }; // end of sh
 
 /**
@@ -206,7 +242,7 @@ stripCData = (original) => {
 
 	const copyLength = copy.length;
 
-	if (copy.indexOf(right) === copyLength - rightLength) {
+	if ((copyLength >= rightLength) && (copy.indexOf(right) === copyLength - rightLength)) {
 		copy = copy.substring(0, copyLength - rightLength);
 		changed = true;
 	}

@@ -60,6 +60,7 @@ module.exports = function(config) {
 
 		// list of files / patterns to load in the browser
 		files: [
+			{ pattern: "node_modules/web-component-base-class/src/*.js", type: "module", watched: false, served: true, included: false, second: false, nocache: true },
 			{ pattern: "src/**/*.+(map|html|txt|css)", type: "module", watched: true, served: true, included: false, second: false, nocache: true },
 			{ pattern: "src/**/*.+(js)", type: "module", watched: true, served: true, second: false, nocache: true },
 			{ pattern: "test/**/*.html", type: "module", watched: true, served: true, included: false, second: false, nocache: true },
@@ -92,8 +93,7 @@ module.exports = function(config) {
 
 		// start these browsers
 		// first browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-		browsers: ["ChromeHeadless", "FirefoxHeadless"],
-		// browsers: ["Chrome"],
+		browsers: runSettings.visible ? ["Chrome"] : ["ChromeHeadless", "FirefoxHeadless"],
 
 		// Concurrency level
 		// how many browser should be started simultaneous

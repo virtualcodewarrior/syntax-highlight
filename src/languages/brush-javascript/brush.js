@@ -1,19 +1,23 @@
 import BrushBase from '../brush-base/brush-base.js';
 import { commonRegExp as regexLib } from '../../utilities/syntaxhighlighter-regex/syntaxhighlighter-regex.js';
+import xRegExp from '../../utilities/syntaxhighlighter-regex/xregexp.js';
 
 function Brush() {
-	const keywords = 'break case catch class continue ' +
-		'default delete do else enum export extends false  ' +
-		'for from as function if implements import in instanceof ' +
-		'interface let new null package private protected ' +
-		'static return super switch ' +
-		'this throw true try typeof var while with yield';
+	const keywords = `arguments as async await break case catch class const continue 
+		debugger default delete do else enum eval export extends false finally 
+		for from function if implements import in Infinity instanceof  
+		interface let NaN new null of package private protected public 
+		return self static super switch 
+		this throw true try typeof undefined var void while with yield`;
 
 	this.regexList = [{
-		regex: regexLib.multiLineDoubleQuotedString,
+		regex: xRegExp('"([^\\\\"\\n]|\\\\[\\s\\S])*"', 'gs'),
 		css: 'string',
 	}, {
-		regex: regexLib.multiLineSingleQuotedString,
+		regex: xRegExp("'([^\\\\'\\n]|\\\\[\\s\\S])*'", 'gs'),
+		css: 'string',
+	}, {
+		regex: xRegExp("`([^\\\\']|\\\\[\\s\\S])*`", 'gs'),
 		css: 'string',
 	}, {
 		regex: regexLib.singleLineCComments,
