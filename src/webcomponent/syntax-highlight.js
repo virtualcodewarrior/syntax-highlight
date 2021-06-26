@@ -113,6 +113,11 @@ if (path) {
 						handleHighlight?.(instance);
 					},
 				},
+				noCopyButton: {
+					type: Boolean,
+					value: false,
+					reflectToAttribute: true,
+				},
 			};
 		}
 
@@ -122,6 +127,18 @@ if (path) {
 			this.language = this.language.toLowerCase();
 			this.$.theme.href = `${scriptDir}/../themes/theme-${this.theme}/theme.css`;
 			this.$.code.innerHTML = `<pre>${this.innerHTML}</pre>`;
+			this.addAutoEventListener(this.$.copy, 'click', async() => {
+				const textBody = this.$.code.querySelector('.syntaxhighlight td.code');
+				textBody.classList.add('auto-selecting');
+				this.$.mainStyle.innerHTML += '\n::selection { background-color: transparent }';
+				const selection = window.getSelection();
+				selection.selectAllChildren(textBody);
+				await navigator.clipboard.writeText(selection.toString());
+				selection.removeAllRanges();
+				this.$.mainStyle.innerHTML = this.$.mainStyle.innerHTML.replace('\n::selection { background-color: transparent }', '');
+				this.$.copy.textContent = 'copied';
+				setTimeout(() => { this.$.copy.textContent = 'copy'; }, 2000);
+			});
 			handleHighlight = async(component) => {
 				const { autoLinks = true, gutter = true, firstLine = 1, highlight = [], htmlScript = false, smartTabs = true, tabSize = 4 } = component;
 				const options = {
@@ -158,7 +175,7 @@ if (path) {
 		static get template() {
 			return `
 		<link id="theme" rel="stylesheet" type="text/css" href="${scriptDir}/../themes/theme-base/theme-base.css">
- 		<style>
+ 		<style id="main-style">
  		:host {
  			position: relative;
  			display: block;
@@ -174,9 +191,20 @@ if (path) {
 			overflow-y: auto;
 		}
 		
+		:host([no-copy-button]) #copy {
+			display: none
+		}
+		
+		#copy {
+			position: absolute;
+			left: 10px;
+			top: 10px;
+		}
+		
 		</style>
 		<div class="wrapper">
 			<div slot="section-content" id="code"></div>
+			<button id="copy">copy</button>
 		</div>
 		`;
 		}
