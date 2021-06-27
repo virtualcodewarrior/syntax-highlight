@@ -27,7 +27,7 @@ window.customElements.define(webComponentName, class extends webComponentBaseCla
 	}
 
 	static get properties() {
-		const observer = (instance) => { handleHighlight?.(instance); }
+		const observer = (instance) => { handleHighlight?.(instance); };
 		return {
 			language: {
 				type: String,
@@ -60,9 +60,9 @@ window.customElements.define(webComponentName, class extends webComponentBaseCla
 					instance.$.code.style.height = instance.height || undefined;
 				},
 			},
-			autoLinks: {
+			noAutoLinks: {
 				type: Boolean,
-				value: true,
+				value: false,
 				reflectToAttribute: true,
 				observer,
 			},
@@ -72,9 +72,9 @@ window.customElements.define(webComponentName, class extends webComponentBaseCla
 				reflectToAttribute: true,
 				observer,
 			},
-			gutter: {
+			noGutter: {
 				type: Boolean,
-				value: true,
+				value: false,
 				reflectToAttribute: true,
 				observer,
 			},
@@ -90,9 +90,9 @@ window.customElements.define(webComponentName, class extends webComponentBaseCla
 				reflectToAttribute: true,
 				observer,
 			},
-			smartTabs: {
+			noSmartTabs: {
 				type: Boolean,
-				value: true,
+				value: false,
 				reflectToAttribute: true,
 				observer,
 			},
@@ -129,12 +129,12 @@ window.customElements.define(webComponentName, class extends webComponentBaseCla
 			setTimeout(() => { this.$.copy.textContent = 'copy'; }, 2000);
 		});
 		handleHighlight = async(component) => {
-			const { autoLinks = true, gutter = true, firstLine = 1, highlight = [], htmlScript = false, smartTabs = true, tabSize = 4 } = component;
+			const { noAutoLinks = false, noGutter = false, firstLine = 1, highlight = [], htmlScript = false, noSmartTabs = false, tabSize = 4 } = component;
 			const options = {
-				autoLinks,
-				gutter,
+				autoLinks: !noAutoLinks,
+				gutter: !noGutter,
 				htmlScript,
-				smartTabs,
+				smartTabs: !noSmartTabs,
 				tabSize,
 				firstLine,
 				highlight,
