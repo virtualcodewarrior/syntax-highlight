@@ -133,7 +133,6 @@ window.customElements.define(webComponentName, class extends webComponentBaseCla
 			setTimeout(() => { this.$.copy.textContent = 'copy'; }, 2000);
 		});
 		const cachedSource = {};
-		console.log(this.noGutter);
 		this[privateData].handleHighlight = async(component) => {
 			const { noAutoLinks = false, noGutter = false, firstLine = 1, highlight = [], htmlScript = false, noSmartTabs = false, tabSize = 4 } = component;
 			const options = {
