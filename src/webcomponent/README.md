@@ -35,16 +35,16 @@ having to include it inside the webcomponent by specifying it in the `src` attri
 ```
 
 ## attributes
-| name       | default | description                                 |
-|------------|---------|---------------------------------------------|
-| auto-links | true    | enable links in the code to be clickable    |
-| first-line | 1       | The line number of the first line of code   |
-| gutter     | true    | Shows the line numbers                      |
-| highlight  | [ ]     | Array of line numbers to highlight formatted as a json array (e.g. [2,4] ) |
-| html-script| false   | Enables mixing HTML with code if you want to highlight HTML that contains scripts |
-| smart-tabs | true    | Enables smart tabs                          |
-| tab-size   | 4       | The number of spaces for a tab character    |
-| no-copy-button | false | Hides the copy button if set              |
+| name           | default | description                                 |
+|----------------|---------|---------------------------------------------|
+| no-auto-links  | false   | disable links in the code to be clickable    |
+| first-line     | 1       | The line number of the first line of code   |
+| no-gutter      | false   | Hide the line numbers                      |
+| highlight      | [ ]     | Array of line numbers to highlight formatted as a json array (e.g. [2,4] ) |
+| html-script    | false   | Enables mixing HTML with code if you want to highlight HTML that contains scripts |
+| no-smart-tabs  | false   | Disables smart tabs                          |
+| tab-size       | 4       | The number of spaces for a tab character    |
+| no-copy-button | false   | Hides the copy button              |
 
 You can assign these properties either directly on a retrieved element instance (note that you have to use camelCase in that case) :
 ```html

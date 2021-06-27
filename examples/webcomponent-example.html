@@ -27,13 +27,13 @@
 		<h2>Test options</h2>
 		<div style="display: flex; flex-direction: column">
 			<div><input id="auto-links" type="checkbox" checked
-						onChange="document.getElementById('theme-change').autoLinks = this.checked">
+						onChange="document.getElementById('theme-change').noAutoLinks = !this.checked">
 				<label for="auto-links">auto-links</label></div>
 			<div><input id="first-line" type="number" value="1" min="1"
 						onChange="document.getElementById('theme-change').firstLine = this.value">
 				<label for="first-line">first-line</label></div>
 			<div><input id="gutter" type="checkbox" checked
-						onChange="document.getElementById('theme-change').gutter = this.checked">
+						onChange="document.getElementById('theme-change').noGutter = !this.checked">
 				<label for="gutter">gutter</label></div>
 			<div><input id="highlight" type="text" placeholder="for example: 2,4"
 						onChange="document.getElementById('theme-change').highlight = this.value.split(',')">
@@ -42,7 +42,7 @@
 						onChange="document.getElementById('theme-change').htmlScript = this.checked">
 				<label for="html-script">html-script</label></div>
 			<div><input id="smart-tabs" type="checkbox" checked
-						onChange="document.getElementById('theme-change').smartTabs = this.checked">
+						onChange="document.getElementById('theme-change').noSmartTabs = !this.checked">
 				<label for="smart-tabs">smart-tabs</label></div>
 			<div><input id="tab-size" type="number" value="4" min="1"
 						onChange="document.getElementById('theme-change').tabSize = this.value">
@@ -58,12 +58,12 @@
 </div>
 
 HTML
-<syntax-highlight language="xml">
+<syntax-highlight language="xml" no-gutter>
 	<meta charset="UTF-8">
 	<title>Web component syntax highlighter</title>
 </syntax-highlight>
 Javascript with Django theme
-<syntax-highlight language="javascript" theme="django">
+<!--<syntax-highlight language="javascript" theme="django">
 	for (const item of items) {
 		item.x += item.y;
 	}
@@ -76,6 +76,6 @@ C++
 </syntax-highlight>
 Using an imported source file and highlight that
 <syntax-highlight height="300px" language="JavaScript" src="../src/syntaxhighlight.js">
-</syntax-highlight>
+</syntax-highlight> -->
 </body>
 </html>

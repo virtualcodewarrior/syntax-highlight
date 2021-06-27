@@ -25,6 +25,13 @@ You can also still add brushes manually by using registerBrush.
 ![Screenshot](screenshot.png)
 
 # Installation
+## npm
+```shell
+run i --save syntaxhighlight-webcomponent
+```
+import the js file from `node_modules/syntaxhighlight-webcomponent/dist/webcomponent/syntax-highlight.js` for the minified version or
+import the js file from `node_modules/syntaxhighlight-webcomponent/source/webcomponent/syntax-highlight.js` for the un-minified version
+## github 
 Just clone the project to your disk using
 ```shell
 git clone https://github.com/virtualcodewarrior/syntaxhighlight.git
