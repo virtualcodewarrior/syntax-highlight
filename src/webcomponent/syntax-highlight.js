@@ -128,6 +128,7 @@ window.customElements.define(webComponentName, class extends webComponentBaseCla
 			this.$.copy.textContent = 'copied';
 			setTimeout(() => { this.$.copy.textContent = 'copy'; }, 2000);
 		});
+		let cachedSource = {};
 		handleHighlight = async(component) => {
 			const { noAutoLinks = false, noGutter = false, firstLine = 1, highlight = [], htmlScript = false, noSmartTabs = false, tabSize = 4 } = component;
 			const options = {
@@ -140,13 +141,15 @@ window.customElements.define(webComponentName, class extends webComponentBaseCla
 				highlight,
 			};
 			if (component.src) {
-				let text;
+				let text = cachedSource[component.src];
 				try {
-					const srcResult = await fetch(component.src);
-					if (srcResult.ok) {
-						text = await srcResult.text();
-						component.$.code.innerHTML = await getHighlightedCode(component.language, text, options);
+					if (!text) {
+						const srcResult = await fetch(component.src);
+						if (srcResult.ok) {
+							cachedSource[component.src] = text = await srcResult.text();
+						}
 					}
+					component.$.code.innerHTML = await getHighlightedCode(component.language, text ?? '', options);
 				} catch (err) {
 					component.$.code.innerHTML = err;
 				}
