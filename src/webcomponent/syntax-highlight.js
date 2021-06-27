@@ -1,6 +1,8 @@
 // https://github.com/virtualcodewarrior/syntaxhighlight
 import { webComponentBaseClass } from '../../node_modules/web-component-base-class/src/webComponentBaseClass.js';
 
+const privateData = Symbol("privateData");
+
 const scriptDir = `${import.meta.url.split('/').slice(0, -1).join('/')}`; // remove last filename part of path
 const worker = new Worker(`${scriptDir}/syntax-highlight-worker.js`);
 const handlers = {};
@@ -17,17 +19,19 @@ const getHighlightedCode = async(language, code, options) => new Promise((resolv
 	worker.postMessage({ code, language, id, options });
 });
 
-let handleHighlight;
 const webComponentName = 'syntax-highlight';
 window.customElements.define(webComponentName, class extends webComponentBaseClass {
 	static get is() { return webComponentName; }
 
 	constructor() {
 		super();
+		this[privateData] = {
+			handleHighlight: undefined,
+		};
 	}
 
 	static get properties() {
-		const observer = (instance) => { handleHighlight?.(instance); };
+		const observer = (instance) => { instance[privateData].handleHighlight?.(instance); };
 		return {
 			language: {
 				type: String,
@@ -128,8 +132,9 @@ window.customElements.define(webComponentName, class extends webComponentBaseCla
 			this.$.copy.textContent = 'copied';
 			setTimeout(() => { this.$.copy.textContent = 'copy'; }, 2000);
 		});
-		let cachedSource = {};
-		handleHighlight = async(component) => {
+		const cachedSource = {};
+		console.log(this.noGutter);
+		this[privateData].handleHighlight = async(component) => {
 			const { noAutoLinks = false, noGutter = false, firstLine = 1, highlight = [], htmlScript = false, noSmartTabs = false, tabSize = 4 } = component;
 			const options = {
 				autoLinks: !noAutoLinks,
@@ -161,7 +166,7 @@ window.customElements.define(webComponentName, class extends webComponentBaseCla
 				}
 			}
 		};
-		handleHighlight(this);
+		this[privateData].handleHighlight(this);
 	}
 
 	static get template() {
