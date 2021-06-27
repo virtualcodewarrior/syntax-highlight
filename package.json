@@ -1,6 +1,6 @@
 {
-  "name": "syntaxhighlight",
-  "version": "5.0.0",
+  "name": "syntaxhighlight-webcomponent",
+  "version": "5.0.4",
   "type": "module",
   "author": {
     "name": "Alex Gorbatchev",
