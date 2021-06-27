@@ -1,7 +1,7 @@
 // https://github.com/virtualcodewarrior/syntaxhighlight
 import { webComponentBaseClass } from '../../node_modules/web-component-base-class/src/webComponentBaseClass.js';
 
-const privateData = Symbol("privateData");
+const privateData = Symbol('privateData');
 
 const scriptDir = `${import.meta.url.split('/').slice(0, -1).join('/')}`; // remove last filename part of path
 const worker = new Worker(`${scriptDir}/syntax-highlight-worker.js`);
