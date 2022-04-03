@@ -1,7 +1,5 @@
 // https://github.com/virtualcodewarrior/syntaxhighlight
-import { webComponentBaseClass } from '../../node_modules/web-component-base-class/src/webComponentBaseClass.js';
-
-const privateData = Symbol('privateData');
+import { WebComponentBaseClass } from '../../node_modules/web-component-base-class/src/web-component-base-class.js';
 
 const scriptDir = `${import.meta.url.split('/').slice(0, -1).join('/')}`; // remove last filename part of path
 const worker = new Worker(`${scriptDir}/syntax-highlight-worker.js`);
@@ -19,19 +17,17 @@ const getHighlightedCode = async(language, code, options) => new Promise((resolv
 	worker.postMessage({ code, language, id, options });
 });
 
-const webComponentName = 'syntax-highlight';
-window.customElements.define(webComponentName, class extends webComponentBaseClass {
-	static get is() { return webComponentName; }
-
+class SyntaxHighlight extends WebComponentBaseClass {
+	#privateData;
 	constructor() {
 		super();
-		this[privateData] = {
+		this.#privateData = {
 			handleHighlight: undefined,
 		};
 	}
 
 	static get properties() {
-		const observer = (instance) => { instance[privateData].handleHighlight?.(instance); };
+		const observer = (instance) => { instance.#privateData.handleHighlight?.(instance); };
 		return {
 			language: {
 				type: String,
@@ -133,7 +129,7 @@ window.customElements.define(webComponentName, class extends webComponentBaseCla
 			setTimeout(() => { this.$.copy.textContent = 'copy'; }, 2000);
 		});
 		const cachedSource = {};
-		this[privateData].handleHighlight = async(component) => {
+		this.#privateData.handleHighlight = async(component) => {
 			const { noAutoLinks = false, noGutter = false, firstLine = 1, highlight = [], htmlScript = false, noSmartTabs = false, tabSize = 4 } = component;
 			const options = {
 				autoLinks: !noAutoLinks,
@@ -165,7 +161,7 @@ window.customElements.define(webComponentName, class extends webComponentBaseCla
 				}
 			}
 		};
-		this[privateData].handleHighlight(this);
+		this.#privateData.handleHighlight(this);
 	}
 
 	static get template() {
@@ -204,4 +200,6 @@ window.customElements.define(webComponentName, class extends webComponentBaseCla
 	</div>
 	`;
 	}
-});
+}
+
+window.customElements.define('syntax-highlight', SyntaxHighlight);
