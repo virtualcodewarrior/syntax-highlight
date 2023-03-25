@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c427cdd-0fd4-4490-bafd-cd4960d8f055" name="Default Changelist" comment="" />
+    <list default="true" id="2c427cdd-0fd4-4490-bafd-cd4960d8f055" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/build.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +27,7 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="update-versions" />
-                    <option name="lastUsedInstant" value="1649021934" />
+                    <option name="lastUsedInstant" value="1679785966" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="develop" />
@@ -29,10 +36,6 @@
                   <RecentBranch>
                     <option name="branchName" value="main" />
                     <option name="lastUsedInstant" value="1624760101" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="copy-code-button" />
-                    <option name="lastUsedInstant" value="1624743096" />
                   </RecentBranch>
                 </list>
               </option>
@@ -47,28 +50,24 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="NamedScopeManager">
-    <scope name="Git Scope" pattern="" />
+    <scope name="GitScope" pattern="" />
   </component>
   <component name="ProjectId" id="1uUNtmPYIj5PQa33kSSzTnJOC9y" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.standard" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
-    <property name="node.js.selected.package.standard" value="" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/rodney/prj/github.com/virtualcodewarrior/syntaxhighlight",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/themes" />
@@ -87,6 +86,7 @@
       <workItem from="1624887672699" duration="140000" />
       <workItem from="1644684567258" duration="1577000" />
       <workItem from="1649020946339" duration="1431000" />
+      <workItem from="1679785742794" duration="1974000" />
     </task>
     <servers />
   </component>

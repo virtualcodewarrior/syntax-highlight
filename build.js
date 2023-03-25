@@ -22,7 +22,7 @@ const doMinify = async(src, dst) => {
 		const fileName = path.basename(dst);
 
 		// minify javascript files, assume modules and create a source map
-		const minResult = await minify(fs.readFileSync(src, 'utf8').replace(/\/web-component-base-class\/src\//g, '/web-component-base-class/dist/'), {
+		const minResult = await minify(fs.readFileSync(src, 'utf8').replace(/\/node_modules\/web-component-base-class\/src\//g, '/../web-component-base-class/dist/'), {
 			mangle: true,
 			module: true,
 			sourceMap: {
@@ -38,7 +38,7 @@ const doMinify = async(src, dst) => {
 		map.sources[0] = `../src/${fileName}`;
 		fs.outputFileSync(`${dst}.map`, JSON.stringify(map));
 	} else if (/\.(css|html)$/.test(src)) {
-		const data = fs.readFileSync(src, 'utf8').replace(/\/web-component-base-class\/src\//g, '/web-component-base-class/dist/').replace(/\/src\//g, '/');
+		const data = fs.readFileSync(src, 'utf8').replace(/\/node_modules\/web-component-base-class\/src\//g, '/../web-component-base-class/dist/').replace(/\/src\//g, '/');
 		fs.outputFileSync(dst, data);
 		result = true;
 	}
